@@ -1,3 +1,6 @@
+<?php
+require 'template/processing/db_config.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
