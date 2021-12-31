@@ -30,7 +30,11 @@ require 'template/processing/db_config.php';
             <div class="auth-form-transparent text-left p-3">
               <div class="brand-logo">
                 <!-- <img src="template/images/leanerslogo" alt="logo"> -->
+<<<<<<< Updated upstream
                <h3 class="text-primary text-uppercase" style="font-weight: bold; font-size: 25.5px;"> Learners Progress Report  <i class="mdi mdi-finance"></i></h3>
+=======
+               <h4><strong>LEARNER'S PROGRESS REPORT</strong></h4>
+>>>>>>> Stashed changes
               </div>
               <h4>Welcome back!</h4>
               <h6 class="font-weight-light">Happy to see you again!</h6>
