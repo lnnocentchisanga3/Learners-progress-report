@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Kapella Bootstrap Admin Dashboard Template</title>
+  <title>Learnes progress report</title>
   <!-- base:css -->
   <link rel="stylesheet" href="template/vendors/mdi/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="template/vendors/base/vendor.bundle.base.css">
@@ -15,7 +15,7 @@
   <!-- inject:css -->
   <link rel="stylesheet" href="template/css/style.css">
   <!-- endinject -->
-  <link rel="shortcut icon" href="template/images/favicon.png" />
+  <link rel="shortcut icon" href="template/images/hello" />
 </head>
 
 <body>
@@ -54,25 +54,25 @@
                   </div>
                 </div>
                 <div class="my-2 d-flex justify-content-between align-items-center">
-                  <div class="form-check">
+                  <!-- <div class="form-check">
                     <label class="form-check-label text-muted">
                       <input type="checkbox" class="form-check-input">
                       Keep me signed in
                     </label>
-                  </div>
+                  </div> -->
                   <a href="#" class="auth-link text-black">Forgot password?</a>
                 </div>
                 <div class="my-3">
                   <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="template/index.html">LOGIN</a>
                 </div>
-                <div class="mb-2 d-flex">
+                <!-- <div class="mb-2 d-flex">
                   <button type="button" class="btn btn-facebook auth-form-btn flex-grow me-1">
                     <i class="mdi mdi-facebook me-2"></i>Facebook
                   </button>
                   <button type="button" class="btn btn-google auth-form-btn flex-grow ms-1">
                     <i class="mdi mdi-google me-2"></i>Google
                   </button>
-                </div>
+                </div> -->
                 <div class="text-center mt-4 font-weight-light">
                   Don't have an account? <a href="register-2.html" class="text-primary">Create</a>
                 </div>
