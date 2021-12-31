@@ -26,7 +26,7 @@
           <div class="col-lg-6 d-flex align-items-center justify-content-center">
             <div class="auth-form-transparent text-left p-3">
               <div class="brand-logo">
-                <img src="template/images/logo.svg" alt="logo">
+                <img src="template/images/leanerslogo" alt="logo">
               </div>
               <h4>Welcome back!</h4>
               <h6 class="font-weight-light">Happy to see you again!</h6>
@@ -73,9 +73,9 @@
                     <i class="mdi mdi-google me-2"></i>Google
                   </button>
                 </div> -->
-                <div class="text-center mt-4 font-weight-light">
+                <!-- <div class="text-center mt-4 font-weight-light">
                   Don't have an account? <a href="register-2.html" class="text-primary">Create</a>
-                </div>
+                </div> -->
               </form>
             </div>
           </div>
