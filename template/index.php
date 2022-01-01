@@ -3,8 +3,8 @@
   require "./processing/db_config.php";
 
   if (!$_SESSION['userid']) {
-    header("location: ../index.php");
-  }
+    header("location: ../index.php?login=you_nned_to_login");
+  }else{
 
   $user = $_SESSION['user_log_id'];
 
@@ -399,7 +399,7 @@
                         <div class="container-fluid">
                           <div class="row">
                             <div class="col-md-6"></div>
-                            <div class="col-md-6"><button class="btn btn-danger"><i class="mdi mdi-account-plus p-2"></i>Add classes</button></div>
+                            <div class="col-md-6"><button class="btn btn-outline-success"><i class="mdi mdi-account-plus p-2"></i>Add classes</button></div>
                           </div>
                         </div>
                       </div>
@@ -471,3 +471,6 @@
     <!-- End custom js for this page-->
   </body>
 </html>
+<?php
+  }
+?>
