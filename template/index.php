@@ -225,7 +225,7 @@
 					<div class="row">
 						<div class="col-sm-6 mb-4 mb-xl-0">
 							<div class="d-lg-flex align-items-center">
-								<div>
+								<div class="py-3">
 									<h3 class="text-dark font-weight-bold mb-2">Hi, User [<?php echo $_SESSION['user_log_id']; ?>] welcome back!</h3>
 									<h6 class="font-weight-normal mb-2">Last login was at <?php echo $log_row['log_time'];  ?>. <a href="#">View log details</a></h6>
 								</div>
@@ -241,24 +241,14 @@
 						</div>
 						<div class="col-sm-6">
 							<div class="d-flex align-items-center justify-content-md-end">
-								<!-- <div class="pe-1 mb-3 mb-xl-0">
-										<button type="button" class="btn btn-outline-inverse-info btn-icon-text">
-											Feedback
-											<i class="mdi mdi-message-outline btn-icon-append"></i>                          
-										</button>
-								</div> -->
+								
 								<div class="pe-1 mb-3 mb-xl-0">
 										<button type="button" class="btn btn-outline-inverse-info btn-icon-text">
 											Help
 											<i class="mdi mdi-help-circle-outline btn-icon-append"></i>                          
 									</button>
 								</div>
-								<!-- <div class="pe-1 mb-3 mb-xl-0">
-										<button type="button" class="btn btn-outline-inverse-info btn-icon-text">
-											Print
-											<i class="mdi mdi-printer btn-icon-append"></i>                          
-										</button>
-								</div> -->
+								
 							</div>
 						</div>
 					</div>
@@ -309,12 +299,12 @@
 									<div class="card">
 										<div class="card-body">
 											<div class="d-flex align-items-center justify-content-between">
-												<h4 class="card-title mb-2">Sales Difference</h4>
+												<h4 class="card-title mb-2">Teachers Registered</h4>
 												<div class="dropdown">
 													<a href="#" class="text-success btn btn-link  px-1"><i class="mdi mdi-refresh"></i></a>
 													<a href="#" class="text-success btn btn-link px-1 dropdown-toggle dropdown-arrow-none" data-bs-toggle="dropdown" id="settingsDropdownsales">
 														<i class="mdi mdi-dots-horizontal"></i></a>
-														<div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="settingsDropdownsales">
+														<!-- <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="settingsDropdownsales">
 															<a class="dropdown-item">
 																<i class="mdi mdi-grease-pencil text-primary"></i>
 																Edit
@@ -323,11 +313,11 @@
 																<i class="mdi mdi-delete text-primary"></i>
 																Delete
 															</a>
-														</div>
+														</div> -->
 												</div>
 											</div>
 											<div>
-												<ul class="nav nav-tabs tab-no-active-fill" role="tablist">
+												<!-- <ul class="nav nav-tabs tab-no-active-fill" role="tablist">
 													<li class="nav-item">
 														<a class="nav-link active ps-2 pe-2" id="revenue-for-last-month-tab" data-bs-toggle="tab" href="#revenue-for-last-month" role="tab" aria-controls="revenue-for-last-month" aria-selected="true">Revenue for last month</a>
 													</li>
@@ -340,11 +330,11 @@
 													<li class="nav-item">
 														<a class="nav-link ps-2 pe-2" id="sales-by-traffic-tab" data-bs-toggle="tab" href="#sales-by-traffic" role="tab" aria-controls="sales-by-traffic" aria-selected="false">Sales by traffic</a>
 													</li>
-												</ul>
+												</ul> -->
 												<div class="tab-content tab-no-active-fill-tab-content">
 													<div class="tab-pane fade show active" id="revenue-for-last-month" role="tabpanel" aria-labelledby="revenue-for-last-month-tab">
 														<div class="d-lg-flex justify-content-between">
-															<p class="mb-4">+5.2% vs last 7 days</p>
+															<!-- <p class="mb-4">+5.2% vs last 7 days</p> -->
 															<div id="revenuechart-legend" class="revenuechart-legend">f</div>
 														</div>
 														<canvas id="revenue-for-last-month-chart"></canvas>
@@ -377,6 +367,9 @@
 								</div>
 							</div>
 						</div>
+
+
+
 						<div class="col-sm-4 flex-column d-flex stretch-card">
 							<div class="row flex-grow">
 								<div class="col-sm-12 grid-margin stretch-card">
@@ -384,7 +377,7 @@
 										<div class="card-body">
 											<div class="row">
 												<div class="col-lg-8">
-													<h3 class="font-weight-bold text-dark">Canada,Ontario</h3>
+													<h3 class="font-weight-bold text-dark">Pupils Registered</h3>
 													<p class="text-dark">Monday 3.00 PM</p>
 													<div class="d-lg-flex align-items-baseline mb-3">
 														<h1 class="text-dark font-weight-bold">23<sup class="font-weight-light"><small>o</small><small class="font-weight-medium">c</small></sup></h1>
@@ -437,13 +430,15 @@
 										</div>
 									</div>
 								</div>
+
+
 								<div class="col-sm-12 grid-margin stretch-card">
 									<div class="card">
 										<div class="card-body">
 											<div class="row">
 												<div class="col-sm-12">
 													<div class="d-flex align-items-center justify-content-between">
-														<h4 class="card-title mb-0">Visits Today</h4>
+														<h4 class="card-title mb-0">Registered Classes</h4>
 														<div class="dropdown">
 															<a href="#" class="text-success btn btn-link  px-1"><i class="mdi mdi-refresh"></i></a>
 															<a href="#" class="text-success btn btn-link px-1 dropdown-toggle dropdown-arrow-none" data-bs-toggle="dropdown" id="profileDropdownvisittoday"><i class="mdi mdi-dots-horizontal"></i></a>
@@ -475,6 +470,8 @@
 								</div>
 							</div>
 						</div>
+
+
 					</div>
 
 				</div>
