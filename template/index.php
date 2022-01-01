@@ -33,25 +33,9 @@
   </head>
   <body>
     <div class="container-scroller">
-				<!-- <div class="row p-0 m-0 proBanner" id="proBanner">
-					<div class="col-md-12 p-0 m-0">
-						<div class="card-body card-body-padding d-flex align-items-center justify-content-between">
-							<div class="ps-lg-1">
-								<div class="d-flex align-items-center justify-content-between">
-									<p class="mb-0 font-weight-medium me-3 buy-now-text">Free 24/7 customer support, updates, and more with this template!</p>
-									<a href="https://www.bootstrapdash.com/product/kapella-admin-pro/?utm_source=organic&utm_medium=banner&utm_campaign=buynow_demo" target="_blank" class="btn me-2 buy-now-btn border-0">Get Pro</a>
-								</div>
-							</div>
-							<div class="d-flex align-items-center justify-content-between">
-								<a href="https://www.bootstrapdash.com/product/kapella-admin-pro/"><i class="mdi mdi-home me-3 text-white"></i></a>
-								<button id="bannerClose" class="btn border-0 p-0">
-									<i class="mdi mdi-close text-white me-0"></i>
-								</button>
-							</div>
-						</div>
-					</div>
-				</div> -->
-		<!-- partial:partials/_horizontal-navbar.html -->
+
+
+
     <div class="horizontal-menu">
       <nav class="navbar top-navbar col-lg-12 col-12 p-0">
         <div class="container-fluid">
@@ -308,6 +292,7 @@
 											</div>
 											<div>
 
+
                         <table class="table table-bordered table-striped table-hover rounded">
                           <thead class="bg-primary text-white">
                             <tr>
@@ -338,6 +323,7 @@
                         </table>
 												
                       </div>
+
 										</div>
 									</div>
 								</div>
@@ -351,96 +337,48 @@
 								<div class="col-sm-12 grid-margin stretch-card">
 									<div class="card">
 										<div class="card-body">
-											<div class="row">
-												<div class="col-lg-8">
-													<h3 class="font-weight-bold text-dark">Pupils Registered</h3>
-													<p class="text-dark">Monday 3.00 PM</p>
-													<div class="d-lg-flex align-items-baseline mb-3">
-														<h1 class="text-dark font-weight-bold">23<sup class="font-weight-light"><small>o</small><small class="font-weight-medium">c</small></sup></h1>
-														<p class="text-muted ms-3">Partly cloudy</p>
-													</div>
-												</div>
-												<div class="col-lg-4">
-													<div class="position-relative">
-														<img src="images/dashboard/live.png" class="w-100" alt="">
-														<div class="live-info badge badge-success">Live</div>
-													</div>
-												</div>
-											</div>
-											<div class="row">
-												<div class="col-sm-12 mt-4 mt-lg-0">
-													<div class="bg-primary text-white px-4 py-4 card">
-														<div class="row">
-															<div class="col-sm-6 pl-lg-5">
-																<h2>$1635</h2>
-																<p class="mb-0">Your Iincome</p>
-															</div>
-															<div class="col-sm-6 climate-info-border mt-lg-0 mt-2">
-																<h2>$2650</h2>
-																<p class="mb-0">Your Spending</p>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="row pt-3 mt-md-1">
-												<div class="col">
-													<div class="d-flex purchase-detail-legend align-items-center">
-														<div id="circleProgress1" class="p-2"></div>
-														<div>
-															<p class="font-weight-medium text-dark text-small">Sessions</p>
-															<h3 class="font-weight-bold text-dark  mb-0">26.80%</h3>
-														</div>
-													</div>
-												</div>
-												<div class="col">
-													<div class="d-flex purchase-detail-legend align-items-center">
-														<div id="circleProgress2" class="p-2"></div>
-														<div>
-															<p class="font-weight-medium text-dark text-small">Users</p>
-															<h3 class="font-weight-bold text-dark  mb-0">56.80%</h3>
-														</div>
-													</div>
-												</div>
-											</div>
+                      <h3 class="font-weight-bold text-dark">Pupils Registered</h3>
+
+                      <table class="table">
+                        <thead>
+                         <tr>
+                            <th>Pupil ID</th>
+                          <th>Subject</th>
+                          <th>Class ID</th>
+                          <th>Class Teacher ID</th>
+                         </tr>
+                        </thead>
+
+                        <tbody>
+                          <tr>
+                            <td>100</td>
+                          <td>Eng</td>
+                          <td>11 C</td>
+                          <td>1</td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+
 										</div>
 									</div>
 								</div>
-
-
 								<div class="col-sm-12 grid-margin stretch-card">
 									<div class="card">
 										<div class="card-body">
-											<div class="row">
-												<div class="col-sm-12">
-													<div class="d-flex align-items-center justify-content-between">
-														<h4 class="card-title mb-0">Registered Classes</h4>
-														<div class="dropdown">
-															<a href="#" class="text-success btn btn-link  px-1"><i class="mdi mdi-refresh"></i></a>
-															<a href="#" class="text-success btn btn-link px-1 dropdown-toggle dropdown-arrow-none" data-bs-toggle="dropdown" id="profileDropdownvisittoday"><i class="mdi mdi-dots-horizontal"></i></a>
-															<div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdownvisittoday">
-																<a class="dropdown-item">
-																	<i class="mdi mdi-grease-pencil text-primary"></i>
-																	Edit
-																</a>
-																<a class="dropdown-item">
-																	<i class="mdi mdi-delete text-primary"></i>
-																	Delete
-																</a>
-															</div>
-														</div>
-													</div>
-													<p class="mt-1">Calculated in last 30 days</p>
-													<div class="d-lg-flex align-items-center justify-content-between">
-														<h1 class="font-weight-bold text-dark">4332</h1>
-														<div class="mb-3">
-															<button type="button" class="btn btn-outline-light text-dark font-weight-normal">Day</button>
-															<button type="button" class="btn btn-outline-light text-dark font-weight-normal">Month</button>
-														</div>
-													</div>
-													<canvas id="visitorsToday"></canvas>
-												</div>
-											</div>
+                      <h4 class="card-title mb-0">Registered Classes</h4>
+                      <table class="table">
+                        <thead>
+                          <th>Class ID</th>
+                          <th>Teacher ID</th>
+                        </thead>
+
+                        <tr>
+                          <td>2</td>
+                          <td>2023</td>
+                        </tr>
+                      </table>
+
 										</div>
 									</div>
 								</div>
