@@ -262,44 +262,33 @@
 							</div>
 						</div>
 					</div>
-
-
-
-
-
-
-
-
-
 					<div class="row">
 						<div class="col-sm-8 flex-column d-flex stretch-card">
 							<div class="row">
 								<div class="col-lg-4 d-flex grid-margin stretch-card">
 									<div class="card bg-primary">
 										<div class="card-body text-white">
-											<h3 class="font-weight-bold mb-3">18,39 (75GB)</h3>
-											<div class="progress mb-3">
+											<h3 class="font-weight-bold mb-3">18,39</h3>
+											<!-- <div class="progress mb-3">
 												<div class="progress-bar  bg-warning" role="progressbar" style="width: 40%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-											</div>
-											<p class="pb-0 mb-0">Bandwidth usage</p>
+											</div> -->
+											<p class="pb-0 mb-0">Number of Teachers Registered</p>
 										</div>
 									</div>
 								</div>
 								<div class="col-lg-4 d-flex grid-margin stretch-card">
 									<div class="card sale-diffrence-border">
 										<div class="card-body">
-											<h2 class="text-dark mb-2 font-weight-bold">$6475</h2>
-											<h4 class="card-title mb-2">Sales Difference</h4>
-											<small class="text-muted">APRIL 2019</small>
+											<h2 class="text-dark mb-2 font-weight-bold">6475</h2>
+											<h4 class="card-title mb-2">Total number of classes</h4>
 										</div>
 									</div>
 								</div>
 								<div class="col-lg-4 d-flex grid-margin stretch-card">
 									<div class="card sale-visit-statistics-border">
 										<div class="card-body">
-											<h2 class="text-dark mb-2 font-weight-bold">$3479</h2>
-											<h4 class="card-title mb-2">Visit Statistics</h4>
-											<small class="text-muted">APRIL 2019</small>
+											<h2 class="text-dark mb-2 font-weight-bold">3479</h2>
+											<h4 class="card-title mb-2">Total number of Pupils</h4>
 										</div>
 									</div>
 								</div>
