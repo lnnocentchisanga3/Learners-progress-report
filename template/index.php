@@ -275,8 +275,15 @@
                       <div class="col-md-12">
                         <div class="container-fluid">
                           <div class="row">
-                            <div class="col-md-6"></div>
-                            <div class="col-md-6"><button class="btn btn-primary"><i class="mdi mdi-account-plus p-2"></i>Add a Teacher</button></div>
+                            <div class="col-md-12">
+                              <div class="container-fluid">
+                                <div class="row">
+                                  <button class="btn btn-primary col-md-3 mx-1"><i class="mdi mdi-account-plus "></i>Add a Teacher</button>
+                                 <button class="btn btn-success col-md-3 mx-1"><i class="mdi mdi-account-plus "></i>Assign a Class</button>
+                                 <button class="btn btn-dark col-md-3 mx-1"><i class="mdi mdi-account-plus "></i>Assign a Subject</button>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
