@@ -281,7 +281,11 @@
                         </div>
                       </div>
 
-											<div class="d-flex align-items-center justify-content-between">
+										
+
+
+
+                    	<div class="d-flex align-items-center justify-content-between">
 												<h4 class="card-title mb-2">Teachers Registered</h4>
 												<div class="dropdown">
 													<a href="#" class="text-success btn btn-link  px-1"><i class="mdi mdi-refresh"></i></a>
@@ -337,15 +341,29 @@
 								<div class="col-sm-12 grid-margin stretch-card">
 									<div class="card">
 										<div class="card-body">
+
+
+                      <div class="col-md-12">
+                        <div class="container-fluid">
+                          <div class="row">
+                            <div class="col-md-6"></div>
+                            <div class="col-md-6"><button class="btn btn-primary"><i class="mdi mdi-account-plus p-2"></i>Add a Pupil</button></div>
+                          </div>
+                        </div>
+                      </div>
+
+
+
                       <h3 class="font-weight-bold text-dark">Pupils Registered</h3>
 
-                      <table class="table">
-                        <thead>
+                      <table class="table table-bordered table-striped table-hover rounded">
+                        <thead class="bg-primary text-white">
                          <tr>
                             <th>Pupil ID</th>
                           <th>Subject</th>
                           <th>Class ID</th>
                           <th>Class Teacher ID</th>
+                          <th>Edit / Delete</th>
                          </tr>
                         </thead>
 
@@ -355,6 +373,10 @@
                           <td>Eng</td>
                           <td>11 C</td>
                           <td>1</td>
+                          <td>
+                             <a href="#" class="btn btn-success btn-sm ">Edit</a>
+                             <a href="#" class="btn btn-danger btn-sm">Delete</a>
+                          </td>
                           </tr>
                         </tbody>
                       </table>
@@ -366,16 +388,31 @@
 								<div class="col-sm-12 grid-margin stretch-card">
 									<div class="card">
 										<div class="card-body">
+                      <div class="col-md-12">
+                        <div class="container-fluid">
+                          <div class="row">
+                            <div class="col-md-6"></div>
+                            <div class="col-md-6"><button class="btn btn-danger"><i class="mdi mdi-account-plus p-2"></i>Add classes</button></div>
+                          </div>
+                        </div>
+                      </div>
+
                       <h4 class="card-title mb-0">Registered Classes</h4>
-                      <table class="table">
-                        <thead>
+                      <table class="table table-bordered table-striped table-hover rounded">
+                        <thead class="bg-primary text-white">
                           <th>Class ID</th>
                           <th>Teacher ID</th>
+                          <th>Edit / Delete</th>
+
                         </thead>
 
                         <tr>
                           <td>2</td>
                           <td>2023</td>
+                          <td>
+                             <a href="#" class="btn btn-success btn-sm ">Edit</a>
+                             <a href="#" class="btn btn-danger btn-sm">Delete</a>
+                          </td>
                         </tr>
                       </table>
 
