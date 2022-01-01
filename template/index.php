@@ -152,7 +152,7 @@
                   <span class="menu-title">Dashboard</span>
                 </a>
               </li>
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                   <a href="#" class="nav-link">
                     <i class="mdi mdi-cube-outline menu-icon"></i>
                     <span class="menu-title">UI Elements</span>
@@ -213,7 +213,7 @@
                   <a href="docs/documentation.html" class="nav-link">
                     <i class="mdi mdi-file-document-box-outline menu-icon"></i>
                     <span class="menu-title">Documentation</span></a>
-              </li>
+              </li> -->
             </ul>
         </div>
       </nav>
@@ -287,70 +287,57 @@
 								<div class="col-sm-12 grid-margin d-flex stretch-card">
 									<div class="card">
 										<div class="card-body">
+                      
+                      <div class="col-md-12">
+                        <div class="container-fluid">
+                          <div class="row">
+                            <div class="col-md-6"></div>
+                            <div class="col-md-6"><button class="btn btn-primary"><i class="mdi mdi-account-plus p-2"></i>Add a Teacher</button></div>
+                          </div>
+                        </div>
+                      </div>
+
 											<div class="d-flex align-items-center justify-content-between">
 												<h4 class="card-title mb-2">Teachers Registered</h4>
 												<div class="dropdown">
 													<a href="#" class="text-success btn btn-link  px-1"><i class="mdi mdi-refresh"></i></a>
 													<a href="#" class="text-success btn btn-link px-1 dropdown-toggle dropdown-arrow-none" data-bs-toggle="dropdown" id="settingsDropdownsales">
 														<i class="mdi mdi-dots-horizontal"></i></a>
-														<!-- <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="settingsDropdownsales">
-															<a class="dropdown-item">
-																<i class="mdi mdi-grease-pencil text-primary"></i>
-																Edit
-															</a>
-															<a class="dropdown-item">
-																<i class="mdi mdi-delete text-primary"></i>
-																Delete
-															</a>
-														</div> -->
+														
 												</div>
 											</div>
 											<div>
-												<!-- <ul class="nav nav-tabs tab-no-active-fill" role="tablist">
-													<li class="nav-item">
-														<a class="nav-link active ps-2 pe-2" id="revenue-for-last-month-tab" data-bs-toggle="tab" href="#revenue-for-last-month" role="tab" aria-controls="revenue-for-last-month" aria-selected="true">Revenue for last month</a>
-													</li>
-													<li class="nav-item">
-														<a class="nav-link ps-2 pe-2" id="server-loading-tab" data-bs-toggle="tab" href="#server-loading" role="tab" aria-controls="server-loading" aria-selected="false">Server loading</a>
-													</li>
-													<li class="nav-item">
-														<a class="nav-link ps-2 pe-2" id="data-managed-tab" data-bs-toggle="tab" href="#data-managed" role="tab" aria-controls="data-managed" aria-selected="false">Data managed</a>
-													</li>
-													<li class="nav-item">
-														<a class="nav-link ps-2 pe-2" id="sales-by-traffic-tab" data-bs-toggle="tab" href="#sales-by-traffic" role="tab" aria-controls="sales-by-traffic" aria-selected="false">Sales by traffic</a>
-													</li>
-												</ul> -->
-												<div class="tab-content tab-no-active-fill-tab-content">
-													<div class="tab-pane fade show active" id="revenue-for-last-month" role="tabpanel" aria-labelledby="revenue-for-last-month-tab">
-														<div class="d-lg-flex justify-content-between">
-															<!-- <p class="mb-4">+5.2% vs last 7 days</p> -->
-															<div id="revenuechart-legend" class="revenuechart-legend">f</div>
-														</div>
-														<canvas id="revenue-for-last-month-chart"></canvas>
-													</div>
-													<div class="tab-pane fade" id="server-loading" role="tabpanel" aria-labelledby="server-loading-tab">
-														<div class="d-flex justify-content-between">
-															<p class="mb-4">+5.2% vs last 7 days</p>
-															<div id="serveLoading-legend" class="revenuechart-legend">f</div>
-														</div>
-														<canvas id="serveLoading"></canvas>
-													</div>
-													<div class="tab-pane fade" id="data-managed" role="tabpanel" aria-labelledby="data-managed-tab">
-														<div class="d-flex justify-content-between">
-															<p class="mb-4">+5.2% vs last 7 days</p>
-															<div id="dataManaged-legend" class="revenuechart-legend">f</div>
-														</div>
-														<canvas id="dataManaged"></canvas>
-													</div>
-													<div class="tab-pane fade" id="sales-by-traffic" role="tabpanel" aria-labelledby="sales-by-traffic-tab">
-														<div class="d-flex justify-content-between">
-															<p class="mb-4">+5.2% vs last 7 days</p>
-															<div id="salesTrafic-legend" class="revenuechart-legend">f</div>
-														</div>
-														<canvas id="salesTrafic"></canvas>
-													</div>
-												</div>
-											</div>
+
+                        <table class="table table-bordered table-striped table-hover rounded">
+                          <thead class="bg-primary text-white">
+                            <tr>
+                              <th>User ID</th>
+                              <th>Classes</th>
+                              <th>Subjects</th>
+
+                              <th>User type</th>
+                              <th>Phone</th>
+                              <th>Edit / Delete</th>
+                            </tr>
+                          </thead>
+
+                          <tbody>
+                            <tr>
+                              <td>LPR2468</td>
+                              <td>8 B</td>
+                              <td>Civics</td>
+
+                              <td>Subject Teacher</td>
+                              <td>98795875443</td>
+                              <td>
+                                <a href="#" class="btn btn-success">Edit</a>
+                                <a href="#" class="btn btn-danger">Delete</a>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+												
+                      </div>
 										</div>
 									</div>
 								</div>
