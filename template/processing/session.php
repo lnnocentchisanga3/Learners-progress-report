@@ -12,7 +12,23 @@ if ($query && $_SESSION['userid']) {
 	$_SESSION['user_type'] = $get_user['user_type'];
 	$_SESSION['status'] = $get_user['status'];
 
-	header("location: ../index.html");
+
+	$user = $_SESSION['user_log_id'];
+
+	$date = date("Y/m/d");
+
+	$date_time = date("H:i:s");
+
+
+	$log = "INSERT INTO logs(user_id,log_time,status,date_added) VALUES('$user','$date_time','login','$date')";
+
+	$query1 = mysqli_query($conn_db, $log);
+
+	if ($query1) {
+		header("location: ../index.php");
+	}else{
+		header("location: ../../index.php?login=try_again");
+	}
 }else{
 
 	header("location: ../../index.php?login=error_user_not_set");

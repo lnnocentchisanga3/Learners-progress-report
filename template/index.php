@@ -1,10 +1,25 @@
+<?php
+  session_start();
+  require "./processing/db_config.php";
+
+  if (!$_SESSION['userid']) {
+    header("location: ../index.php");
+  }
+
+  $user = $_SESSION['user_log_id'];
+
+  $get_time = mysqli_query($conn_db, "SELECT * FROM logs WHERE user_id = '$user' ORDER BY logid ASC");
+
+  $log_row = mysqli_fetch_array($get_time);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Kapella Bootstrap Admin Dashboard Template</title>
+    <title>Learnes progress report</title>
     <!-- base:css -->
     <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="vendors/base/vendor.bundle.base.css">
@@ -14,11 +29,11 @@
     <!-- inject:css -->
     <link rel="stylesheet" href="css/style.css">
     <!-- endinject -->
-    <link rel="shortcut icon" href="images/favicon.png" />
+    <link rel="shortcut icon" href="images/" />
   </head>
   <body>
     <div class="container-scroller">
-				<div class="row p-0 m-0 proBanner" id="proBanner">
+				<!-- <div class="row p-0 m-0 proBanner" id="proBanner">
 					<div class="col-md-12 p-0 m-0">
 						<div class="card-body card-body-padding d-flex align-items-center justify-content-between">
 							<div class="ps-lg-1">
@@ -35,7 +50,7 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> -->
 		<!-- partial:partials/_horizontal-navbar.html -->
     <div class="horizontal-menu">
       <nav class="navbar top-navbar col-lg-12 col-12 p-0">
@@ -153,14 +168,15 @@
               </li>	
             </ul>
             <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-                <a class="navbar-brand brand-logo" href="index.html"><img src="images/logo.svg" alt="logo"/></a>
-                <a class="navbar-brand brand-logo-mini" href="index.html"><img src="images/logo-mini.svg" alt="logo"/></a>
+               <!--  <a class="navbar-brand brand-logo" href="index.html"><img src="images/logo.svg" alt="logo"/></a>
+                <a class="navbar-brand brand-logo-mini" href="index.html"><img src="images/logo-mini.svg" alt="logo"/></a> -->
+                 <h3 class="text-primary text-uppercase" style="font-weight: bold; font-size: 25.5px;"> Learners Progress Report  <i class="mdi mdi-finance"></i></h3>
             </div>
             <ul class="navbar-nav navbar-nav-right">
-                <li class="nav-item dropdown  d-lg-flex d-none">
+                <!-- <li class="nav-item dropdown  d-lg-flex d-none">
                   <button type="button" class="btn btn-inverse-primary btn-sm">Product </button>
-                </li>
-                <li class="nav-item dropdown d-lg-flex d-none">
+                </li> -->
+                <!-- <li class="nav-item dropdown d-lg-flex d-none">
                   <a class="dropdown-toggle show-dropdown-arrow btn btn-inverse-primary btn-sm" id="nreportDropdown" href="#" data-bs-toggle="dropdown">
                   Reports
                   </a>
@@ -175,22 +191,23 @@
                         Exel
                       </a>
                   </div>
-                </li>
+                </li> -->
                 <li class="nav-item dropdown d-lg-flex d-none">
-                  <button type="button" class="btn btn-inverse-primary btn-sm">Settings</button>
+                  <button type="button" class="btn btn-inverse-primary btn-sm"><i class="mdi mdi-settings text-primary"></i> Settings</button>
                 </li>
                 <li class="nav-item nav-profile dropdown">
                   <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="profileDropdown">
-                    <span class="nav-profile-name">Johnson</span>
+                    <span class="nav-profile-name"><?php echo $_SESSION['user_log_id']; ?></span>
                     <span class="online-status"></span>
-                    <img src="images/faces/face28.png" alt="profile"/>
+                    <!-- <img src="images/faces/face28.png" alt="profile"/> -->
+                    <i class="mdi mdi-account-circle text-primary" style="font-size: 25px;"></i>
                   </a>
                   <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-                      <a class="dropdown-item">
+                      <!-- <a class="dropdown-item">
                         <i class="mdi mdi-settings text-primary"></i>
                         Settings
-                      </a>
-                      <a class="dropdown-item">
+                      </a> -->
+                      <a class="dropdown-item" href="./processing/logout.php?user=<?php echo $_SESSION['user_log_id']; ?>">
                         <i class="mdi mdi-logout text-primary"></i>
                         Logout
                       </a>
@@ -207,7 +224,7 @@
         <div class="container">
             <ul class="nav page-navigation">
               <li class="nav-item">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="index.php">
                   <i class="mdi mdi-file-document-box menu-icon"></i>
                   <span class="menu-title">Dashboard</span>
                 </a>
@@ -286,8 +303,8 @@
 						<div class="col-sm-6 mb-4 mb-xl-0">
 							<div class="d-lg-flex align-items-center">
 								<div>
-									<h3 class="text-dark font-weight-bold mb-2">Hi, welcome back!</h3>
-									<h6 class="font-weight-normal mb-2">Last login was 23 hours ago. View details</h6>
+									<h3 class="text-dark font-weight-bold mb-2">Hi, User [<?php echo $_SESSION['user_log_id']; ?>] welcome back!</h3>
+									<h6 class="font-weight-normal mb-2">Last login was at <?php echo $log_row['log_time'];  ?>. <a href="#">View log details</a></h6>
 								</div>
 								<div class="ms-lg-5 d-lg-flex d-none">
 										<button type="button" class="btn bg-white btn-icon">

@@ -43,6 +43,8 @@ if ($get_user_data) {
 		  default:
 		    echo "Your favorite color is neither red, blue, nor green!";
 		}
+
+		
 	}else{
 		header("location: ../../index.php?login=error_pwd_invalid");
 	}
