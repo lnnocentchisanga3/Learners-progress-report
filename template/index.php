@@ -221,12 +221,12 @@
 
                       $num_pupils = mysqli_query($conn_db, $total_no_pupils);
 
-                      $total_num = mysqli_num_rows($num_pupils);
+                      $total_num2 = mysqli_num_rows($num_pupils);
 
                       mysqli_close($conn_db);  
                        ?>
 
-                        <h2 class="text-dark mb-2 font-weight-bold">3479</h2>
+                        <h2 class="text-dark mb-2 font-weight-bold"><?php echo $total_num2; ?></h2>
 										</div>
 									</div>
 								</div>
@@ -341,6 +341,27 @@
                         </thead>
 
                         <tbody>
+
+                          <?php
+                          require "./processing/db_config.php";
+
+                          $get_pupils = "SELECT * FROM pupils INNER JOIN lessons ON pupils.class_id = lessons.class_id";
+
+                          $num_pupils = mysqli_query($conn_db, $get_pupils);
+
+
+                          if ($num_pupils) {
+                            echo "done";
+                          }else{
+                            echo "Error :".mysqli_error($conn_db);
+                          }
+
+                        /*  $total_num3 = mysqli_num_rows($num_pupils);
+
+                          mysql_close($conn_db);*/
+
+                          ?>
+
                           <tr>
                             <td>100</td>
                           <td>Eng</td>
