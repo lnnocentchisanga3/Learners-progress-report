@@ -100,7 +100,7 @@
             <ul class="navbar-nav navbar-nav-right">
                 
                 <li class="nav-item dropdown d-lg-flex d-none">
-                  <button type="button" class="btn btn-inverse-primary btn-sm"><i class="mdi mdi-settings text-primary"></i> Settings</button>
+                  <button type="button" class="btn btn-primary btn-sm"><i class="mdi mdi-settings text-white"></i> Settings</button>
                 </li>
                 <li class="nav-item nav-profile dropdown">
                   <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="profileDropdown">
@@ -136,68 +136,7 @@
                   <span class="menu-title">Dashboard</span>
                 </a>
               </li>
-              <!-- <li class="nav-item">
-                  <a href="#" class="nav-link">
-                    <i class="mdi mdi-cube-outline menu-icon"></i>
-                    <span class="menu-title">UI Elements</span>
-                    <i class="menu-arrow"></i>
-                  </a>
-                  <div class="submenu">
-                      <ul>
-                          <li class="nav-item"><a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a></li>
-                          <li class="nav-item"><a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
-                      </ul>
-                  </div>
-              </li>
-              <li class="nav-item">
-                  <a href="pages/forms/basic_elements.html" class="nav-link">
-                    <i class="mdi mdi-chart-areaspline menu-icon"></i>
-                    <span class="menu-title">Form Elements</span>
-                    <i class="menu-arrow"></i>
-                  </a>
-              </li>
-              <li class="nav-item">
-                  <a href="pages/charts/chartjs.html" class="nav-link">
-                    <i class="mdi mdi-finance menu-icon"></i>
-                    <span class="menu-title">Charts</span>
-                    <i class="menu-arrow"></i>
-                  </a>
-              </li>
-              <li class="nav-item">
-                  <a href="pages/tables/basic-table.html" class="nav-link">
-                    <i class="mdi mdi-grid menu-icon"></i>
-                    <span class="menu-title">Tables</span>
-                    <i class="menu-arrow"></i>
-                  </a>
-              </li>
-              <li class="nav-item">
-                  <a href="pages/icons/mdi.html" class="nav-link">
-                    <i class="mdi mdi-emoticon menu-icon"></i>
-                    <span class="menu-title">Icons</span>
-                    <i class="menu-arrow"></i>
-                  </a>
-              </li>
-              <li class="nav-item">
-                  <a href="#" class="nav-link">
-                    <i class="mdi mdi-codepen menu-icon"></i>
-                    <span class="menu-title">Sample Pages</span>
-                    <i class="menu-arrow"></i>
-                  </a>
-                  <div class="submenu">
-                      <ul class="submenu-item">
-                          <li class="nav-item"><a class="nav-link" href="pages/samples/login.html">Login</a></li>
-                          <li class="nav-item"><a class="nav-link" href="pages/samples/login-2.html">Login 2</a></li>
-                          <li class="nav-item"><a class="nav-link" href="pages/samples/register.html">Register</a></li>
-                          <li class="nav-item"><a class="nav-link" href="pages/samples/register-2.html">Register 2</a></li>
-                          <li class="nav-item"><a class="nav-link" href="pages/samples/lock-screen.html">Lockscreen</a></li>
-                      </ul>
-                  </div>
-              </li>
-              <li class="nav-item">
-                  <a href="docs/documentation.html" class="nav-link">
-                    <i class="mdi mdi-file-document-box-outline menu-icon"></i>
-                    <span class="menu-title">Documentation</span></a>
-              </li> -->
+              
             </ul>
         </div>
       </nav>
@@ -227,7 +166,7 @@
 							<div class="d-flex align-items-center justify-content-md-end">
 								
 								<div class="pe-1 mb-3 mb-xl-0">
-										<button type="button" class="btn btn-outline-inverse-info btn-icon-text">
+										<button type="button" class="btn btn-primary btn-icon-text">
 											Help
 											<i class="mdi mdi-help-circle-outline btn-icon-append"></i>                          
 									</button>
@@ -239,27 +178,30 @@
 					<div class="row">
 						<div class="col-sm-8 flex-column d-flex stretch-card">
 							<div class="row">
+
+
 								<div class="col-lg-4 d-flex grid-margin stretch-card">
-									<div class="card bg-primary">
-										<div class="card-body text-white">
-											<h3 class="font-weight-bold mb-3">18,39</h3>
-											<!-- <div class="progress mb-3">
-												<div class="progress-bar  bg-warning" role="progressbar" style="width: 40%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-											</div> -->
+									<div class="card">
+										<div class="card-body ">
+											<h2 class="text-dark mb-2 font-weight-bold">18,39</h2>
 											<p class="pb-0 mb-0">Number of Teachers Registered</p>
 										</div>
 									</div>
 								</div>
+
+
 								<div class="col-lg-4 d-flex grid-margin stretch-card">
-									<div class="card sale-diffrence-border">
+									<div class="card ">
 										<div class="card-body">
 											<h2 class="text-dark mb-2 font-weight-bold">6475</h2>
 											<h4 class="card-title mb-2">Total number of classes</h4>
 										</div>
 									</div>
 								</div>
+
+
 								<div class="col-lg-4 d-flex grid-margin stretch-card">
-									<div class="card sale-visit-statistics-border">
+									<div class="card ">
 										<div class="card-body">
 											<h2 class="text-dark mb-2 font-weight-bold">3479</h2>
 											<h4 class="card-title mb-2">Total number of Pupils</h4>
@@ -274,6 +216,8 @@
 										</div>
 									</div>
 								</div>
+
+
 							</div>
 							<div class="row">
 								<div class="col-sm-12 grid-margin d-flex stretch-card">
@@ -287,8 +231,8 @@
                               <div class="container-fluid">
                                 <div class="row">
                                   <button class="btn btn-primary col-md-3 mx-1"><i class="mdi mdi-account-plus "></i>Add a Teacher</button>
-                                 <button class="btn btn-success col-md-3 mx-1"><i class="mdi mdi-account-plus "></i>Assign a Class</button>
-                                 <button class="btn btn-dark col-md-3 mx-1"><i class="mdi mdi-account-plus "></i>Assign a Subject</button>
+                                 <button class="btn btn-primary col-md-3 mx-1"><i class="mdi mdi-account-plus "></i>Assign a Class</button>
+                                 <button class="btn btn-primary col-md-3 mx-1"><i class="mdi mdi-account-plus "></i>Assign a Subject</button>
                                 </div>
                               </div>
                             </div>
@@ -407,7 +351,7 @@
                         <div class="container-fluid">
                           <div class="row">
                             <div class="col-md-6"></div>
-                            <div class="col-md-6"><button class="btn btn-outline-success"><i class="mdi mdi-account-plus p-2"></i>Add classes</button></div>
+                            <div class="col-md-6"><button class="btn btn-primary"><i class="mdi mdi-account-plus p-2"></i>Add classes</button></div>
                           </div>
                         </div>
                       </div>
