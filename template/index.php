@@ -41,10 +41,10 @@
         <div class="container-fluid">
           <div class="navbar-menu-wrapper d-flex align-items-center justify-content-between">
             <ul class="navbar-nav navbar-nav-left">
-              <li class="nav-item ms-0 me-5 d-lg-flex d-none">
+              <!-- <li class="nav-item ms-0 me-5 d-lg-flex d-none">
                 <a href="#" class="nav-link horizontal-nav-left-menu"><i class="mdi mdi-format-list-bulleted"></i></a>
-              </li>
-              <li class="nav-item dropdown">
+              </li> -->
+              <!-- <li class="nav-item dropdown">
                 <a class="nav-link count-indicator dropdown-toggle d-flex align-items-center justify-content-center" id="notificationDropdown" href="#" data-bs-toggle="dropdown">
                   <i class="mdi mdi-bell mx-0"></i>
                   <span class="count bg-success">2</span>
@@ -91,7 +91,7 @@
                     </div>
                   </a>
                 </div>
-              </li>
+              </li> -->
               
             </ul>
             <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
@@ -129,7 +129,7 @@
       </nav>
       <nav class="bottom-navbar">
         <div class="container">
-            <ul class="nav page-navigation">
+            <!-- <ul class="nav page-navigation">
               <li class="nav-item">
                 <a class="nav-link" href="index.php">
                   <i class="mdi mdi-file-document-box menu-icon"></i>
@@ -137,7 +137,7 @@
                 </a>
               </li>
               
-            </ul>
+            </ul> -->
         </div>
       </nav>
     </div>
@@ -152,14 +152,14 @@
 									<h3 class="text-dark font-weight-bold mb-2">Hi, User [<?php echo $_SESSION['user_log_id']; ?>] welcome back!</h3>
 									<h6 class="font-weight-normal mb-2">Last login was at <?php echo $log_row['log_time'];  ?>. <a href="#">View log details</a></h6>
 								</div>
-								<div class="ms-lg-5 d-lg-flex d-none">
+								<!-- <div class="ms-lg-5 d-lg-flex d-none">
 										<button type="button" class="btn bg-white btn-icon">
 											<i class="mdi mdi-view-grid text-success"></i>
 									</button>
 										<button type="button" class="btn bg-white btn-icon ms-2">
 											<i class="mdi mdi-format-list-bulleted font-weight-bold text-primary"></i>
 										</button>
-								</div>
+								</div> -->
 							</div>
 						</div>
 						<div class="col-sm-6">
@@ -183,8 +183,18 @@
 								<div class="col-lg-4 d-flex grid-margin stretch-card">
 									<div class="card">
 										<div class="card-body ">
-											<h2 class="text-dark mb-2 font-weight-bold">18,39</h2>
-											<p class="pb-0 mb-0">Number of Teachers Registered</p>
+                      <p class="card-title mb-2">Number of Teachers Registered</p>
+                      <?php
+                      $total_no_Teachers = "SELECT * FROM teachers";
+
+                      $num_teachers = mysqli_query($conn_db, $total_no_Teachers);
+
+
+                      $total_num = mysqli_num_rows($num_teachers);
+
+                      mysqli_close($conn_db);
+                      ?>
+											<h2 class="text-dark mb-2 font-weight-bold"><?php echo $total_num; ?></h2>
 										</div>
 									</div>
 								</div>
@@ -193,8 +203,8 @@
 								<div class="col-lg-4 d-flex grid-margin stretch-card">
 									<div class="card ">
 										<div class="card-body">
+                      <h4 class="card-title mb-2">Total number of classes</h4>
 											<h2 class="text-dark mb-2 font-weight-bold">6475</h2>
-											<h4 class="card-title mb-2">Total number of classes</h4>
 										</div>
 									</div>
 								</div>
@@ -203,8 +213,8 @@
 								<div class="col-lg-4 d-flex grid-margin stretch-card">
 									<div class="card ">
 										<div class="card-body">
+                      <h4 class="card-title mb-2">Total number of Pupils</h4>
 											<h2 class="text-dark mb-2 font-weight-bold">3479</h2>
-											<h4 class="card-title mb-2">Total number of Pupils</h4>
 										</div>
 									</div>
 								</div>
