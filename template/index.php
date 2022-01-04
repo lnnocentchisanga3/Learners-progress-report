@@ -216,7 +216,8 @@
                       <h4 class="card-title mb-2">Total number of Pupils</h4>
 											<h2 class="text-dark mb-2 font-weight-bold">3479</h2>
                       <?php
-                      $total_no_pupils = "SELECT * FROM teachers";
+                      $total_no_pupils = "SELECT * FROM pupils";
+                      
                       $num_pupils = mysqli_query($conn_db, $total_no_pupils);
 
                       $total_num = mysqli_num_rows($num_pupils);
