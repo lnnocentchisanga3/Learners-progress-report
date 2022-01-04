@@ -40,66 +40,12 @@
       <nav class="navbar top-navbar col-lg-12 col-12 p-0">
         <div class="container-fluid">
           <div class="navbar-menu-wrapper d-flex align-items-center justify-content-between">
-            <ul class="navbar-nav navbar-nav-left">
-              <!-- <li class="nav-item ms-0 me-5 d-lg-flex d-none">
-                <a href="#" class="nav-link horizontal-nav-left-menu"><i class="mdi mdi-format-list-bulleted"></i></a>
-              </li> -->
-              <!-- <li class="nav-item dropdown">
-                <a class="nav-link count-indicator dropdown-toggle d-flex align-items-center justify-content-center" id="notificationDropdown" href="#" data-bs-toggle="dropdown">
-                  <i class="mdi mdi-bell mx-0"></i>
-                  <span class="count bg-success">2</span>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
-                  <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
-                  <a class="dropdown-item preview-item">
-                    <div class="preview-thumbnail">
-                        <div class="preview-icon bg-success">
-                          <i class="mdi mdi-information mx-0"></i>
-                        </div>
-                    </div>
-                    <div class="preview-item-content">
-                        <h6 class="preview-subject font-weight-normal">Application Error</h6>
-                        <p class="font-weight-light small-text mb-0 text-muted">
-                          Just now
-                        </p>
-                    </div>
-                  </a>
-                  <a class="dropdown-item preview-item">
-                    <div class="preview-thumbnail">
-                        <div class="preview-icon bg-warning">
-                          <i class="mdi mdi-settings mx-0"></i>
-                        </div>
-                    </div>
-                    <div class="preview-item-content">
-                        <h6 class="preview-subject font-weight-normal">Settings</h6>
-                        <p class="font-weight-light small-text mb-0 text-muted">
-                          Private message
-                        </p>
-                    </div>
-                  </a>
-                  <a class="dropdown-item preview-item">
-                    <div class="preview-thumbnail">
-                        <div class="preview-icon bg-info">
-                          <i class="mdi mdi-account-box mx-0"></i>
-                        </div>
-                    </div>
-                    <div class="preview-item-content">
-                        <h6 class="preview-subject font-weight-normal">New user registration</h6>
-                        <p class="font-weight-light small-text mb-0 text-muted">
-                          2 days ago
-                        </p>
-                    </div>
-                  </a>
-                </div>
-              </li> -->
-              
-            </ul>
-            <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-                 <h3 class="text-primary text-uppercase" style="font-weight: bold; font-size: 25.5px;"> Learners Progress Report  <i class="mdi mdi-finance"></i></h3>
-            </div>
-            <ul class="navbar-nav navbar-nav-right">
+              <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+                  <h3 class="text-primary text-uppercase" style="font-weight: bold; font-size: 25.5px;"> Learners Progress Report  <i class="mdi mdi-finance"></i></h3>
+              </div>
+              <ul class="navbar-nav navbar-nav-right">
                 
-                <li class="nav-item dropdown d-lg-flex d-none">
+                  <li class="nav-item dropdown d-lg-flex d-none">
                   <button type="button" class="btn btn-primary btn-sm"><i class="mdi mdi-settings text-white"></i> Settings</button>
                 </li>
                 <li class="nav-item nav-profile dropdown">
@@ -152,14 +98,7 @@
 									<h3 class="text-dark font-weight-bold mb-2">Hi, User [<?php echo $_SESSION['user_log_id']; ?>] welcome back!</h3>
 									<h6 class="font-weight-normal mb-2">Last login was at <?php echo $log_row['log_time'];  ?>. <a href="#">View log details</a></h6>
 								</div>
-								<!-- <div class="ms-lg-5 d-lg-flex d-none">
-										<button type="button" class="btn bg-white btn-icon">
-											<i class="mdi mdi-view-grid text-success"></i>
-									</button>
-										<button type="button" class="btn bg-white btn-icon ms-2">
-											<i class="mdi mdi-format-list-bulleted font-weight-bold text-primary"></i>
-										</button>
-								</div> -->
+								
 							</div>
 						</div>
 						<div class="col-sm-6">
@@ -255,9 +194,9 @@
                             <div class="col-md-12">
                               <div class="container-fluid">
                                 <div class="row">
-                                  <button class="btn btn-primary col-md-3 mx-1"><i class="mdi mdi-account-plus "></i>Add a Teacher</button>
-                                 <button class="btn btn-primary col-md-3 mx-1"><i class="mdi mdi-account-plus "></i>Assign a Class</button>
-                                 <button class="btn btn-primary col-md-3 mx-1"><i class="mdi mdi-account-plus "></i>Assign a Subject</button>
+                                  <a href="./pages/forms/add_teacher.php" class="btn btn-primary col-md-3 mx-1"><i class="mdi mdi-account-plus p-2"></i>Add a Teacher</a>
+                                 <button class="btn btn-primary col-md-3 mx-1"><i class="mdi mdi-account-plus p-2"></i>Assign a Class</button>
+                                 <button class="btn btn-primary col-md-3 mx-1"><i class="mdi mdi-account-plus p-2"></i>Assign a Subject</button>
                                 </div>
                               </div>
                             </div>
@@ -340,6 +279,9 @@
                              }else{
                               echo "Error :".mysqli_error($conn_db);
                              }
+
+
+                             mysqli_close($conn_db);
                             ?>
                             
                           </tbody>
