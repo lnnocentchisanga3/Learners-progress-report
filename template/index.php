@@ -204,7 +204,18 @@
 									<div class="card ">
 										<div class="card-body">
                       <h4 class="card-title mb-2">Total number of classes</h4>
-											<h2 class="text-dark mb-2 font-weight-bold">6475</h2>
+											 <?php
+                        require "./processing/db_config.php";
+                      $total_no_classes = "SELECT * FROM class";
+
+                      $num_classes = mysqli_query($conn_db, $total_no_classes);
+
+
+                      $total_num1 = mysqli_num_rows($num_classes);
+
+                      mysqli_close($conn_db);
+                      ?>
+                      <h2 class="text-dark mb-2 font-weight-bold"><?php echo $total_num1; ?></h2>
 										</div>
 									</div>
 								</div>
@@ -261,7 +272,7 @@
                     	<div class="d-flex align-items-center justify-content-between">
 												<h4 class="card-title mb-2">Teachers Registered</h4>
 												<div class="dropdown">
-													<a href="#" class="text-success btn btn-link  px-1"><i class="mdi mdi-refresh"></i></a>
+													<a href="index.php" class="text-success btn btn-link  px-1"><i class="mdi mdi-refresh"></i></a>
 													<a href="#" class="text-success btn btn-link px-1 dropdown-toggle dropdown-arrow-none" data-bs-toggle="dropdown" id="settingsDropdownsales">
 														<i class="mdi mdi-dots-horizontal"></i></a>
 														
@@ -284,18 +295,53 @@
                           </thead>
 
                           <tbody>
-                            <tr>
-                              <td>LPR2468</td>
-                              <td>8 B</td>
-                              <td>Civics</td>
+                            <?php
+                             require "./processing/db_config.php";
 
-                              <td>Subject Teacher</td>
-                              <td>98795875443</td>
-                              <td>
-                                <a href="#" class="btn btn-success">Edit</a>
-                                <a href="#" class="btn btn-danger">Delete</a>
-                              </td>
-                            </tr>
+                             $get_teachers = "SELECT * FROM ((teachers INNER JOIN users ON users.user_id = teachers.user_id) INNER JOIN lessons ON teachers.teacher_id = lessons.teacher_id)";
+
+                               $query_get_teachers = mysqli_query($conn_db, $get_teachers);
+
+                             if ($query_get_teachers) {
+
+                               if (mysqli_num_rows($query_get_teachers) == null || mysqli_num_rows($query_get_teachers) == 0) {
+                                 echo '<tr>
+                                      <td>Empty</td>
+                                      <td>Empty</td>
+                                      <td>Empty</td>
+
+                                      <td>Empty</td>
+                                      <td>Empty</td>
+                                      <td>
+                                      Empty
+                                      Empty
+                                    </td>
+                                    </tr>';
+
+                               }else{
+                                while ($row_get_teachers = mysqli_fetch_array($query_get_teachers)) {
+
+                                 echo '<tr>
+                                      <td>'.$row_get_teachers["user_log_id"].'</td>
+                                      <td>'.$row_get_teachers["class_id"].'</td>
+                                      <td>'.$row_get_teachers["subject"].'</td>
+
+                                      <td>'.$row_get_teachers["user_type"].'</td>
+                                      <td>'.$row_get_teachers["phone"].'</td>
+                                      <td>
+                                      <a href="#" class="btn btn-success">Edit</a>
+                                      <a href="#" class="btn btn-danger">Delete</a>
+                                    </td>
+                                    </tr>';
+
+                               }
+                               
+                               }
+                             }else{
+                              echo "Error :".mysqli_error($conn_db);
+                             }
+                            ?>
+                            
                           </tbody>
                         </table>
 												
