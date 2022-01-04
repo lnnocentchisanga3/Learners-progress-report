@@ -328,6 +328,7 @@
                          </tr>
                         </thead>
 
+
                         <tbody>
 
                           <?php
@@ -337,29 +338,38 @@
 
                           $num_pupils = mysqli_query($conn_db, $get_pupils);
 
-
                           if ($num_pupils) {
-                            echo "done";
+                            if (mysqli_num_rows($num_pupils) == null || mysqli_num_rows($num_pupils) == 0) {
+                              echo ' <tr>
+                                       <td>Empty</td>
+                                        <td>Empty</td>
+                                         <td>
+                                        Empty
+                                        Empty                 
+                                         </td>
+                                         </tr>';
+                            }else{
+                              while ($row_get_pupils = mysqli_fetch_array($num_pupils)) {
+                                echo ' <tr>
+                                       <td>'.$row_get_pupils["pupil_id"].'</td>
+                                        <td>'.$row_get_pupils["subject"].'</td>
+                                        <td>'.$row_get_pupils["class_id"].'</td>
+                                        <td>'.$row_get_pupils["class_teacher_id"].'</td>
+                                         <td>
+                                       <a href="#" class="btn btn-success btn-sm ">Edit</a>
+                                        <a href="#" class="btn btn-danger btn-sm">Delete</a>                
+                                         </td>
+                                         </tr>';
+                              }
+                            }
                           }else{
-                            echo "Error :".mysqli_error($conn_db);
+                            echo "Error : ".mysqli_error($conn_db);
                           }
+                          mysqli_close($conn_db);
 
-                        /*  $total_num3 = mysqli_num_rows($num_pupils);
-
-                          mysql_close($conn_db);*/
 
                           ?>
 
-                          <tr>
-                            <td>100</td>
-                          <td>Eng</td>
-                          <td>11 C</td>
-                          <td>1</td>
-                          <td>
-                             <a href="#" class="btn btn-success btn-sm ">Edit</a>
-                             <a href="#" class="btn btn-danger btn-sm">Delete</a>
-                          </td>
-                          </tr>
                         </tbody>
                       </table>
 
@@ -388,12 +398,44 @@
 
                         </thead>
 
-                        <tr>
-                          <td>2</td>
-                          <td>2023</td>
-                          <td>
-                             <a href="#" class="btn btn-success btn-sm ">Edit</a>
-                             <a href="#" class="btn btn-danger btn-sm">Delete</a>
+                        <?php
+                          require "./processing/db_config.php";
+
+                          $get_class = "SELECT * FROM class";
+
+                          $num_class = mysqli_query($conn_db, $get_class);
+
+                          /*$total_num3 = mysqli_num_rows($num_class);*/
+
+
+                          if ($num_class) {
+                            if (mysqli_num_rows($num_class) == null || mysqli_num_rows($num_class) == 0) {
+                              echo ' <tr>
+                                       <td>Empty</td>
+                                        <td>Empty</td>
+                                         <td>
+                                        Empty
+                                        Empty                 
+                                         </td>
+                                         </tr>';
+                            }else{
+                              while ($row_get_class = mysqli_fetch_array($num_class)) {
+                                echo ' <tr>
+                                       <td>'.$row_get_class["class_id"].'</td>
+                                        <td>'.$row_get_class["teacher_id"].'</td>
+                                         <td>
+                                       <a href="#" class="btn btn-success btn-sm ">Edit</a>
+                                        <a href="#" class="btn btn-danger btn-sm">Delete</a>                
+                                         </td>
+                                         </tr>';
+                              }
+                            }
+                          }else{
+                            echo "Error : ".mysqli_error($conn_db);
+                          }
+                          mysqli_close($conn_db);
+
+                          ?>
                           </td>
                         </tr>
                       </table>
