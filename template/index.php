@@ -308,7 +308,7 @@
                         <div class="container-fluid">
                           <div class="row">
                              <div class="col-md-12">
-                               <a href="./pages/forms/add_pupil.php" class="btn btn-primary col-md-3 mx-1"><i class="mdi mdi-account-plus p-2"></i>Add a pupil</a>
+                               <a href="./pages/forms/add_pupil.php" class="btn btn-primary col-md-5 offset-md-5"><i class="mdi mdi-account-plus p-2"></i>Add a pupil</a>
                              </div>
                             <!-- <div class="col-md-6"></div>
                             <div class="col-md-6"><button class="btn btn-primary"><i class="mdi mdi-account-plus p-2"></i>Add a Pupil</button></div> -->
@@ -387,7 +387,7 @@
                         <div class="container-fluid">
                           <div class="row">
                             <div class="col-md-6"></div>
-                            <a href="./pages/forms/add_classes.php" class="btn btn-primary col-md-3 mx-1"><i class="mdi mdi-account-plus p-2"></i>Add class</a>
+                            <a href="./pages/forms/add_classes.php" class="btn btn-primary col-md-5 offset-md-5"><i class="mdi mdi-account-plus p-2"></i>Add class</a>
                           </div>
                         </div>
                       </div>

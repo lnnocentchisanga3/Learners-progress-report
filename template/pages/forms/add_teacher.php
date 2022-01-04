@@ -77,15 +77,7 @@
       </nav>
       <nav class="bottom-navbar">
         <div class="container">
-            <!-- <ul class="nav page-navigation">
-              <li class="nav-item">
-                <a class="nav-link" href="index.php">
-                  <i class="mdi mdi-file-document-box menu-icon"></i>
-                  <span class="menu-title">Dashboard</span>
-                </a>
-              </li>
-              
-            </ul> -->
+            
         </div>
       </nav>
     </div>
@@ -118,28 +110,32 @@
 					</div>
 
 					<div class="row">
-            <div class="col-md-6 grid-margin stretch-card">
-              <div class="card">
+            <div class="col-md-8 offset-md-2 grid-margin stretch-card">
+              <div class="card shadow">
                 <div class="card-body">
-                  <h4 class="card-title">Add A teacher</h4>
+                  <h4 class="card-title"><i class="mdi mdi-account-plus"></i> Add A teacher</h4>
                  <!--  <p class="card-description">
                     Basic form layout
                   </p> -->
-                  <form class="forms-sample">
+                  <form class="form">
                     <div class="form-group">
-                      <label for="exampleInputUsername1">Username</label>
-                      <input type="text" class="form-control" id="exampleInputUsername1" placeholder="Username">
+                      <label for="input-group-append"><i class="mdi mdi-account-card-details"></i> User Log Id</label>
+                      <input type="text" class="form-control"  placeholder="Username">
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputEmail1">Email address</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                      <label for="exampleInputEmail1"><i class="mdi mdi-phone-classic"></i> Phone</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Email">
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputPassword1">Password</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                      <label for="exampleInputPassword1"><i class="mdi mdi-account-star"></i> User Type</label>
+                      <select class="form-control py-3">
+                        <option>Admin</option>
+                        <option>Class Teacher</option>
+                        <option>Subject Teacher</option>
+                      </select>
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputConfirmPassword1">Confirm Password</label>
+                      <label for="exampleInputConfirmPassword1"><i class="mdi mdi-account-key"></i> Password</label>
                       <input type="password" class="form-control" id="exampleInputConfirmPassword1" placeholder="Password">
                     </div>
                     <div class="form-check form-check-flat form-check-primary">
@@ -148,8 +144,8 @@
                         Remember me
                       </label>
                     </div>
-                    <button type="submit" class="btn btn-primary me-2">Submit</button>
-                    <button class="btn btn-light">Cancel</button>
+                    <button type="submit" class="btn btn-primary me-2">Submit <i class="mdi mdi-near-me"></i></button>
+                    <button class="btn btn-danger">Cancel <i class="mdi mdi-block-helper"></i></button>
                   </form>
                 </div>
               </div>
