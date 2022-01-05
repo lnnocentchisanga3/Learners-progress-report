@@ -12,6 +12,47 @@
 
   $log_row = mysqli_fetch_array($get_time);
 
+
+
+
+  if (isset($_POST['submit_teacher'])) {
+
+    $names = $_POST['names'];
+    $userid = strtoupper($_POST['userid']);
+    $phone = $_POST['phone'];
+    $usertype = $_POST['usertype'];
+    $pwd = $_POST['pwd'];
+
+
+    $get_user = mysqli_query($conn_db, "SELECT * FROM users WHERE user_log_id ='$userid' ");
+
+    if (mysqli_num_rows($get_user) == null || mysqli_num_rows($get_user) == 0) {
+      $insert_user = mysqli_query($conn_db, "INSERT INTO users(user_log_id,fullnames,phone,password,user_type,status) VALUES('$userid','$names','$phone','$pwd','$usertype','offline')");
+
+      if ($insert_user == true) {
+        ?>
+        <script>
+          window.alert("Teacher addedd successful");
+        </script>
+        <?php
+      }else{
+        /*echo "user not added ".mysqli_error($conn_db);*/
+         ?>
+        <script>
+          window.alert("Teacher was not addedd, Try Again");
+        </script>
+        <?php
+      }
+    }else{
+       ?>
+        <script>
+          window.alert("The Teacher is already added");
+        </script>
+        <?php
+    }
+    
+  }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -117,18 +158,22 @@
                  <!--  <p class="card-description">
                     Basic form layout
                   </p> -->
-                  <form class="form">
+                  <form class="form" method="POST">
                     <div class="form-group">
                       <label for="input-group-append"><i class="mdi mdi-account-card-details"></i> User Log Id</label>
-                      <input type="text" class="form-control"  placeholder="Username">
+                      <input type="text" name="userid" class="form-control"  placeholder="User ID">
+                    </div>
+                    <div class="form-group">
+                      <label for="input-group-append"><i class="mdi mdi-account-circle"></i>Fullnames</label>
+                      <input type="text" name="names" class="form-control"  placeholder="Fullnames">
                     </div>
                     <div class="form-group">
                       <label for="exampleInputEmail1"><i class="mdi mdi-phone-classic"></i> Phone</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                      <input type="text" name="phone" class="form-control" id="exampleInputEmail1" placeholder="Phone">
                     </div>
                     <div class="form-group">
                       <label for="exampleInputPassword1"><i class="mdi mdi-account-star"></i> User Type</label>
-                      <select class="form-control py-3">
+                      <select class="form-control py-3" name="usertype">
                         <option>Admin</option>
                         <option>Class Teacher</option>
                         <option>Subject Teacher</option>
@@ -136,16 +181,16 @@
                     </div>
                     <div class="form-group">
                       <label for="exampleInputConfirmPassword1"><i class="mdi mdi-account-key"></i> Password</label>
-                      <input type="password" class="form-control" id="exampleInputConfirmPassword1" placeholder="Password">
+                      <input type="password" name="pwd" class="form-control" id="exampleInputConfirmPassword1" placeholder="Password">
                     </div>
-                    <div class="form-check form-check-flat form-check-primary">
+                    <!-- <div class="form-check form-check-flat form-check-primary">
                       <label class="form-check-label">
                         <input type="checkbox" class="form-check-input">
                         Remember me
                       </label>
-                    </div>
-                    <button type="submit" class="btn btn-primary me-2">Submit <i class="mdi mdi-near-me"></i></button>
-                    <button class="btn btn-danger">Cancel <i class="mdi mdi-block-helper"></i></button>
+                    </div> -->
+                    <button type="submit" name="submit_teacher" class="btn btn-primary me-2">Submit <i class="mdi mdi-near-me"></i></button>
+                    <button class="btn btn-danger" type="reset">Cancel <i class="mdi mdi-block-helper"></i></button>
                   </form>
                 </div>
               </div>
