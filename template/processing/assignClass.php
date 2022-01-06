@@ -5,7 +5,11 @@ require "./db_config.php";
 $userid = $_GET['userId'];
 $class = $_GET['class'];
 
-$get_class = mysqli_query($conn_db, "SELECT * FROM class WHERE class ='$class' ");
+if (empty($class)) {
+  echo"The class field is empty";
+}else{
+
+  $get_class = mysqli_query($conn_db, "SELECT * FROM class WHERE class ='$class' ");
 
 if (mysqli_num_rows($get_class) == null || mysqli_num_rows($get_class) == 0 ) {
 
@@ -21,7 +25,6 @@ if (mysqli_num_rows($get_class) == null || mysqli_num_rows($get_class) == 0 ) {
   echo "The class is already Assigned";
 }
 
-
-
+}
 
 ?>
