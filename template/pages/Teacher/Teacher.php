@@ -12,47 +12,6 @@
 
   $log_row = mysqli_fetch_array($get_time);
 
-
-
-
-  if (isset($_POST['submit_teacher'])) {
-
-    $names = $_POST['names'];
-    $userid = strtoupper($_POST['userid']);
-    $phone = $_POST['phone'];
-    $usertype = $_POST['usertype'];
-    $pwd = $_POST['pwd'];
-
-
-    $get_user = mysqli_query($conn_db, "SELECT * FROM users WHERE user_log_id ='$userid' ");
-
-    if (mysqli_num_rows($get_user) == null || mysqli_num_rows($get_user) == 0) {
-      $insert_user = mysqli_query($conn_db, "INSERT INTO users(user_log_id,fullnames,phone,password,user_type,status) VALUES('$userid','$names','$phone','$pwd','$usertype','offline')");
-
-      if ($insert_user == true) {
-        ?>
-        <script>
-          window.alert("Teacher addedd successful");
-        </script>
-        <?php
-      }else{
-        /*echo "user not added ".mysqli_error($conn_db);*/
-         ?>
-        <script>
-          window.alert("Teacher was not addedd, Try Again");
-        </script>
-        <?php
-      }
-    }else{
-       ?>
-        <script>
-          window.alert("The Teacher is already added");
-        </script>
-        <?php
-    }
-    
-  }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -103,7 +62,7 @@
                         <i class="mdi mdi-settings text-primary"></i>
                         Settings
                       </a> -->
-                      <a class="dropdown-item" href="./processing/logout.php?user=<?php echo $_SESSION['user_log_id']; ?>">
+                      <a class="dropdown-item" href="../../processing/logout.php?user=<?php echo $_SESSION['user_log_id']; ?>">
                         <i class="mdi mdi-logout text-primary"></i>
                         Logout
                       </a>
@@ -130,7 +89,7 @@
 						<div class="col-sm-6 mb-4 mb-xl-0">
 							<div class="d-lg-flex align-items-center bg-white shadow my-2 p-2 col-md-5">
                 <div class="py-3">
-                  <h3 class="text-primary font-weight-bold mb-2">Hi, User [<?php echo $_SESSION['user_log_id']; ?>] welcome back!</h3>
+                  <h3 class="text-primary font-weight-bold mb-2">Hi, <strong class="text-uppercase"><?php echo $_SESSION['fullnames']; ?></strong> welcome back!</h3>
                   <h6 class="font-weight-normal mb-2 text-primary">Last login was at <?php echo $log_row['log_time'];  ?>.</h6>
                 </div>
                 
@@ -158,43 +117,40 @@
                  <!--  <p class="card-description">
                     Basic form layout
                   </p> -->
-                  <form class="form" method="POST">
+                  <form class="form">
                     <div class="form-group">
                       <label for="input-group-append"><i class="mdi mdi-account-card-details"></i> User Log Id</label>
-                      <input type="text" name="userid" class="form-control"  placeholder="User ID">
-                    </div>
-                    <div class="form-group">
-                      <label for="input-group-append"><i class="mdi mdi-account-circle"></i>Fullnames</label>
-                      <input type="text" name="names" class="form-control"  placeholder="Fullnames">
+                      <input type="text" class="form-control"  placeholder="Username">
                     </div>
                     <div class="form-group">
                       <label for="exampleInputEmail1"><i class="mdi mdi-phone-classic"></i> Phone</label>
-                      <input type="text" name="phone" class="form-control" id="exampleInputEmail1" placeholder="Phone">
+                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Email">
                     </div>
                     <div class="form-group">
                       <label for="exampleInputPassword1"><i class="mdi mdi-account-star"></i> User Type</label>
-                      <select class="form-control py-3" name="usertype">
+                      <select class="form-control py-3">
                         <option>Admin</option>
-                        <option>Teacher</option>
+                        <option>Class Teacher</option>
+                        <option>Subject Teacher</option>
                       </select>
                     </div>
                     <div class="form-group">
                       <label for="exampleInputConfirmPassword1"><i class="mdi mdi-account-key"></i> Password</label>
-                      <input type="password" name="pwd" class="form-control" id="exampleInputConfirmPassword1" placeholder="Password">
+                      <input type="password" class="form-control" id="exampleInputConfirmPassword1" placeholder="Password">
                     </div>
-                    <!-- <div class="form-check form-check-flat form-check-primary">
+                    <div class="form-check form-check-flat form-check-primary">
                       <label class="form-check-label">
                         <input type="checkbox" class="form-check-input">
                         Remember me
                       </label>
-                    </div> -->
-                    <button type="submit" name="submit_teacher" class="btn btn-primary me-2">Submit <i class="mdi mdi-near-me"></i></button>
-                    <button class="btn btn-danger" type="reset">Cancel <i class="mdi mdi-block-helper"></i></button>
+                    </div>
+                    <button type="submit" class="btn btn-primary me-2">Submit <i class="mdi mdi-near-me"></i></button>
+                    <button class="btn btn-danger">Cancel <i class="mdi mdi-block-helper"></i></button>
                   </form>
                 </div>
               </div>
             </div>
-					</div>
+          </div>
 
 
 
@@ -218,23 +174,23 @@
     </div>
 		<!-- container-scroller -->
     <!-- base:js -->
-    <script src="vendors/base/vendor.bundle.base.js"></script>
+    <script src="../../vendors/base/vendor.bundle.base.js"></script>
     <!-- endinject -->
     <!-- Plugin js for this page-->
     <!-- End plugin js for this page-->
     <!-- inject:js -->
-    <script src="js/template.js"></script>
+    <script src="../../js/template.js"></script>
     <!-- endinject -->
     <!-- plugin js for this page -->
     <!-- End plugin js for this page -->
-    <script src="vendors/chart.js/Chart.min.js"></script>
-    <script src="vendors/progressbar.js/progressbar.min.js"></script>
-		<script src="vendors/chartjs-plugin-datalabels/chartjs-plugin-datalabels.js"></script>
-		<script src="vendors/justgage/raphael-2.1.4.min.js"></script>
-		<script src="vendors/justgage/justgage.js"></script>
-    <script src="js/jquery.cookie.js" type="text/javascript"></script>
+    <script src="../../vendors/chart.js/Chart.min.js"></script>
+    <script src="../../vendors/progressbar.js/progressbar.min.js"></script>
+		<script src="../../vendors/chartjs-plugin-datalabels/chartjs-plugin-datalabels.js"></script>
+		<script src="../../vendors/justgage/raphael-2.1.4.min.js"></script>
+		<script src="../../vendors/justgage/justgage.js"></script>
+    <script src="../../js/jquery.cookie.js" type="text/javascript"></script>
     <!-- Custom js for this page-->
-    <script src="js/dashboard.js"></script>
+    <script src="../../js/dashboard.js"></script>
     <!-- End custom js for this page-->
   </body>
 </html>

@@ -95,7 +95,7 @@
 						<div class="col-sm-6 mb-4 mb-xl-0">
 							<div class="d-lg-flex align-items-center bg-white shadow my-2 p-2 col-md-5">
 								<div class="py-3">
-									<h3 class="text-primary font-weight-bold mb-2">Hi, User [<?php echo $_SESSION['user_log_id']; ?>] welcome back!</h3>
+									<h3 class="text-primary font-weight-bold mb-2">Hi, Admin [<?php echo $_SESSION['user_log_id']; ?>] welcome back!</h3>
 									<h6 class="font-weight-normal mb-2 text-primary">Last login was at <?php echo $log_row['log_time'];  ?>.</h6>
 								</div>
 								

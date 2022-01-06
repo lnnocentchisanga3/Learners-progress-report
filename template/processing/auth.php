@@ -34,8 +34,8 @@ if ($get_user_data) {
 		  case "admin":
 		    header("location: ./session.php");
 		    break;
-		  case "classteacher":
-		    echo "You are a class teacher!";
+		  case "Teacher":
+		     header("location: ./session_teacher.php");
 		    break;
 		  case "subjectteacher":
 		    echo "You are a subject teacher!";
