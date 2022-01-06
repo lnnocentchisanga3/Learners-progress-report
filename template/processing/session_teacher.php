@@ -27,7 +27,7 @@ if ($query && $_SESSION['userid']) {
 	$query1 = mysqli_query($conn_db, $log);
 
 	if ($query1) {
-		header("location: ../pages/Teacher/Teacher.php");
+		header("location: ../pages/Teacher/Teacher.php?get_page=class");
 	}else{
 		header("location: ../../index.php?login=try_again");
 	}
