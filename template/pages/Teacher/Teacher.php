@@ -3,7 +3,7 @@
   require "../../processing/db_config.php";
 
   if (!$_SESSION['userid']) {
-    header("location: ../index.php?login=you_nned_to_login");
+    header("location: ../../index.php?login=you_nned_to_login");
   }else{
 
   $user = $_SESSION['user_log_id'];
@@ -87,7 +87,7 @@
 				<div class="content-wrapper">
 					<div class="row">
 						<div class="col-sm-6 mb-4 mb-xl-0">
-							<div class="d-lg-flex align-items-center bg-white shadow my-2 p-2 col-md-5">
+							<div class="d-lg-flex align-items-center bg-white shadow my-2 p-1 col-md-5">
                 <div class="py-3">
                   <h3 class="text-primary font-weight-bold mb-2">Hi, <strong class="text-uppercase"><?php echo $_SESSION['fullnames']; ?></strong> welcome back!</h3>
                   <h6 class="font-weight-normal mb-2 text-primary">Last login was at <?php echo $log_row['log_time'];  ?>.</h6>
@@ -95,67 +95,61 @@
                 
               </div>
 						</div>
-						<div class="col-sm-6">
-							<div class="d-flex align-items-center justify-content-md-end">
+						<div class="col-sm-6 mb-4 mb-xl-0">
+							<div class="d-flex align-items-center justify-content-md-center">
 								
 								<div class="pe-1 mb-3 mb-xl-0">
-										<a href="../../index.php" type="button" class="btn btn-primary btn-icon-text">
-                      <i class="mdi mdi-arrow-left-bold btn-icon-append p-2"></i>
-											Go Back to Home                          
+										<a href="./Teacher.php?get_page=class" type="button" class="btn btn-primary btn-icon-text shadow">
+                      <i class="mdi mdi-folder-account p-2"></i>
+											My Classes                     
 									</a>
 								</div>
+
+                <div class="pe-1 mb-3 mb-xl-0">
+                    <a href="./Teacher.php?get_page=scores" type="button" class="btn btn-primary btn-icon-text shadow">
+                      <i class="mdi mdi-comment-check-outline p-2"></i>
+                      Enter the scores                        
+                  </a>
+                </div>
+
+                <!-- <div class="pe-1 mb-3 mb-xl-0">
+                    <a href="./Teacher.php?get_page=performance" type="button" class="btn btn-primary btn-icon-text shadow">
+                      <i class="mdi mdi-chart-line btn-icon-append p-2"></i>
+                      View pupils Performance                         
+                  </a>
+                </div> -->
 								
 							</div>
 						</div>
 					</div>
 
 					<div class="row">
-            <div class="col-md-8 offset-md-2 grid-margin stretch-card">
-              <div class="card shadow">
-                <div class="card-body">
-                  <h4 class="card-title"><i class="mdi mdi-account-plus"></i> Add A teacher</h4>
-                 <!--  <p class="card-description">
-                    Basic form layout
-                  </p> -->
-                  <form class="form">
-                    <div class="form-group">
-                      <label for="input-group-append"><i class="mdi mdi-account-card-details"></i> User Log Id</label>
-                      <input type="text" class="form-control"  placeholder="Username">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputEmail1"><i class="mdi mdi-phone-classic"></i> Phone</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Email">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputPassword1"><i class="mdi mdi-account-star"></i> User Type</label>
-                      <select class="form-control py-3">
-                        <option>Admin</option>
-                        <option>Class Teacher</option>
-                        <option>Subject Teacher</option>
-                      </select>
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputConfirmPassword1"><i class="mdi mdi-account-key"></i> Password</label>
-                      <input type="password" class="form-control" id="exampleInputConfirmPassword1" placeholder="Password">
-                    </div>
-                    <div class="form-check form-check-flat form-check-primary">
-                      <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input">
-                        Remember me
-                      </label>
-                    </div>
-                    <button type="submit" class="btn btn-primary me-2">Submit <i class="mdi mdi-near-me"></i></button>
-                    <button class="btn btn-danger">Cancel <i class="mdi mdi-block-helper"></i></button>
-                  </form>
-                </div>
-              </div>
-            </div>
+            <?php
+            if (isset($_GET['get_page'])) {
+                $page = $_GET['get_page'];
+
+                if ($page == "class") {
+                  require 'my_classes.php';
+                }elseif ($page == "scores") {
+                  require 'my_scores.php';
+                }elseif ($page == "performance") {
+                  require 'performance.php';
+                }
+
+
+              }else{
+                echo '<div class="container-fluid">
+                        <div class="col-md-12">
+                          <strong class="offset-md-4 text-danger" style="font-size: 3rem;">404 PAGE NOT FOUND</strong>
+                        </div>
+                      </div>';
+              } 
+            ?>
           </div>
 
 
-
-
 				</div>
+      </div>
 				<!-- content-wrapper ends -->
 				<!-- partial:partials/_footer.html -->
 				<footer class="footer">
@@ -172,6 +166,10 @@
 		</div>
 		<!-- page-body-wrapper ends -->
     </div>
+
+   </div>
+
+
 		<!-- container-scroller -->
     <!-- base:js -->
     <script src="../../vendors/base/vendor.bundle.base.js"></script>
@@ -192,6 +190,48 @@
     <!-- Custom js for this page-->
     <script src="../../js/dashboard.js"></script>
     <!-- End custom js for this page-->
+    <!-- Online CDN -->
+      <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- End of Online CDN -->
+
+     <script>
+      function AddPupil(){
+         var pupilNames = document.getElementById('pupilNames').value;
+        var classPupil = document.getElementById('classPupil').value;
+
+        var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          window.alert(this.responseText);
+        }
+      };
+      xhttp.open("GET", "processing/addPupil.php?pupil="+pupilNames+"&class="+classPupil, true);
+      xhttp.send();
+
+      window.location.reload();
+      }
+
+      function assingTeacherClass(){
+
+        var userLogId = document.getElementById('userLogId').value;
+        var classAssigned = document.getElementById('classAssigned').value;
+
+        var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          window.alert(this.responseText);
+        }
+      };
+      xhttp.open("GET", "processing/assignClass.php?userId="+userLogId+"&class="+classAssigned, true);
+      xhttp.send();
+
+      window.location.reload();
+      }
+
+    </script>
+
   </body>
 </html>
 <?php
