@@ -1,6 +1,4 @@
 <?php
-
-//include "dbConn.php";  Using database connection file here
 require "db_config.php";
 $id = $_GET['id']; // get id through query string
 
