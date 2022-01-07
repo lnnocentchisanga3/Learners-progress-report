@@ -26,7 +26,7 @@
                           <?php
                           require "../../processing/db_config.php";
 
-                          $get_pupils = "SELECT * FROM pupils ";
+                          $get_pupils = "SELECT * FROM pupils INNER JOIN class ON pupils.class=class.class WHERE teacher_id='$user' ";
 
                           $num_pupils = mysqli_query($conn_db, $get_pupils);
 
@@ -48,7 +48,7 @@
                                         <td>'.$row_get_pupils["class"].'</td>
                                          <td>
                                       
-                                        <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#viewResultsModal"><i class="mdi mdi-chart-line btn-icon-append p-2"></i> View Performance</button>                
+                                        <button class="btn btn-primary btn-sm offset-md-4" data-toggle="modal" data-target="#viewResultsModal" value="'.$row_get_pupils["pupil_id"].'" onclick="getPerformance(this.value)"><i class="mdi mdi-chart-line btn-icon-append p-2"></i> View Performance</button>                
                                          </td>
                                          </tr>';
                               }
@@ -105,94 +105,34 @@
         
         <!-- Modal body -->
         <div class="modal-body">
-         <div class="card">
-         	<div class="row">
-         		<div class="col-md-3 mx-1 my-2 ">
-         			<img src="../../images/faces/face1.jpg" class="shadow-sm" style="height: 10rem">
-         		</div>
-         		<div class="col-md-3 mx-1 my-2">Class : 10 N</div>
-         		<div class="col-md-3 mx-1 my-2">Names : Mercy Nambeya</div>
-         	</div>
-         	<div class="card">
-         		<div class="card-header">The subject scores</div>
-         		<div class="card-body">
-         		<div class="row">
-				<div class="col-md-2">
-					<h4 class="card-header bg-primary text-white">Mathematics</h4>
-					<ol>
-						<li>hello</li>
-						<li>hello</li>
-					</ol>
-				</div>
-				<div class="col-md-2">
-					<h4 class="card-header bg-primary text-white">Mathematics</h4>
-					<ol>
-						<li>hello</li>
-						<li>hello</li>
-					</ol>
-				</div>
-				<div class="col-md-2">
-					<h4 class="card-header bg-primary text-white">Mathematics</h4>
-					<ol>
-						<li>hello</li>
-						<li>hello</li>
-					</ol>
-				</div>
-				<div class="col-md-2">
-					<h4 class="card-header bg-primary text-white">Mathematics</h4>
-					<ol>
-						<li>hello</li>
-						<li>hello</li>
-					</ol>
-				</div>
-				<div class="col-md-2">
-					<h4 class="card-header bg-primary text-white">Mathematics</h4>
-					<ol>
-						<li>hello</li>
-						<li>hello</li>
-					</ol>
-				</div>
-				<div class="col-md-2">
-					<h4 class="card-header bg-primary text-white">Mathematics</h4>
-					<ol>
-						<li>hello</li>
-						<li>hello</li>
-					</ol>
-				</div>
-				<div class="col-md-2">
-					<h4 class="card-header bg-primary text-white">Mathematics</h4>
-					<ol>
-						<li>hello</li>
-						<li>hello</li>
-					</ol>
-				</div>
-				<div class="col-md-2">
-					<h4 class="card-header bg-primary text-white">Mathematics</h4>
-					<ol>
-						<li>hello</li>
-						<li>hello</li>
-					</ol></div>
-				<div class="col-md-2">
-					<h4 class="card-header bg-primary text-white">Mathematics</h4>
-					<ol>
-						<li>hello</li>
-						<li>hello</li>
-					</ol>
-				</div>  
-         		</div>
-         	</div>
-         </div>
-        </div>
-        
-        <!-- Modal footer -->
-        <div class="modal-footer">
+         <div class="card" id="pupilPerformance">
+         	
+      </div>
+      <div class="modal-footer">
         	<button type="button" class="btn btn-success" ><i class="mdi mdi-printer btn-icon-append p-2"></i> Print</button>
           <button type="button" class="btn btn-danger text-white" data-dismiss="modal"><i class="mdi mdi-close-circle-outline btn-icon-append p-2"></i> Close</button>
         </div>
-        
-      </div>
     </div>
   </div>
+
+  <script>
+  	function getPerformance(pupilId){
+
+  		/*var pupilNames = document.getElementById('pupilNames').value;
+        var classPupil = document.getElementById('classPupil').value;*/
+
+        var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById('pupilPerformance').innerHTML = this.responseText;
+        }
+      };
+      xhttp.open("GET", "../../processing/get_performance.php?pupil="+pupilId, true);
+      xhttp.send();
+
+     /* window.location.reload();*/
+  	}
+  </script>
   
 
     <!-- End of resulsts modal -->

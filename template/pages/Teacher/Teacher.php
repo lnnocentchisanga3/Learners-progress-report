@@ -8,7 +8,7 @@
 
   $user = $_SESSION['user_log_id'];
 
-  $get_time = mysqli_query($conn_db, "SELECT * FROM logs WHERE user_id = '$user' ORDER BY logid ASC");
+  $get_time = mysqli_query($conn_db, "SELECT * FROM logs WHERE user_id = '$user' ORDER BY logid DESC");
 
   $log_row = mysqli_fetch_array($get_time);
 
@@ -87,7 +87,7 @@
 				<div class="content-wrapper">
 					<div class="row">
 						<div class="col-sm-6 mb-4 mb-xl-0">
-							<div class="d-lg-flex align-items-center bg-white shadow my-2 p-1 col-md-5">
+							<div class="d-lg-flex align-items-center bg-white shadow my-2 p-2 col-md-5">
                 <div class="py-3">
                   <h3 class="text-primary font-weight-bold mb-2">Hi, <strong class="text-uppercase"><?php echo $_SESSION['fullnames']; ?></strong> welcome back!</h3>
                   <h6 class="font-weight-normal mb-2 text-primary">Last login was at <?php echo $log_row['log_time'];  ?>.</h6>
@@ -150,6 +150,108 @@
 
 				</div>
       </div>
+
+        <!-- The Modal -->
+  <div class="modal fade" id="recordScoresModal">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title"><i class="mdi mdi-chart-line btn-icon-append p-2"></i> Performance</h4>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+         <div class="card">
+          <div class="row">
+            <div class="col-md-3 mx-1 my-2 ">
+              <img src="../../images/faces/face1.jpg" class="shadow-sm" style="height: 10rem">
+            </div>
+            <div class="col-md-3 mx-1 my-2">Class : 10 N</div>
+            <div class="col-md-3 mx-1 my-2">Names : Mercy Nambeya</div>
+          </div>
+          <div class="card">
+            <div class="card-header">The subject scores</div>
+            <div class="card-body">
+            <div class="row">
+        <div class="col-md-2">
+          <h4 class="card-header bg-primary text-white">Mathematics</h4>
+          <ol>
+            <li>hello</li>
+            <li>hello</li>
+          </ol>
+        </div>
+        <div class="col-md-2">
+          <h4 class="card-header bg-primary text-white">Mathematics</h4>
+          <ol>
+            <li>hello</li>
+            <li>hello</li>
+          </ol>
+        </div>
+        <div class="col-md-2">
+          <h4 class="card-header bg-primary text-white">Mathematics</h4>
+          <ol>
+            <li>hello</li>
+            <li>hello</li>
+          </ol>
+        </div>
+        <div class="col-md-2">
+          <h4 class="card-header bg-primary text-white">Mathematics</h4>
+          <ol>
+            <li>hello</li>
+            <li>hello</li>
+          </ol>
+        </div>
+        <div class="col-md-2">
+          <h4 class="card-header bg-primary text-white">Mathematics</h4>
+          <ol>
+            <li>hello</li>
+            <li>hello</li>
+          </ol>
+        </div>
+        <div class="col-md-2">
+          <h4 class="card-header bg-primary text-white">Mathematics</h4>
+          <ol>
+            <li>hello</li>
+            <li>hello</li>
+          </ol>
+        </div>
+        <div class="col-md-2">
+          <h4 class="card-header bg-primary text-white">Mathematics</h4>
+          <ol>
+            <li>hello</li>
+            <li>hello</li>
+          </ol>
+        </div>
+        <div class="col-md-2">
+          <h4 class="card-header bg-primary text-white">Mathematics</h4>
+          <ol>
+            <li>hello</li>
+            <li>hello</li>
+          </ol></div>
+        <div class="col-md-2">
+          <h4 class="card-header bg-primary text-white">Mathematics</h4>
+          <ol>
+            <li>hello</li>
+            <li>hello</li>
+          </ol>
+        </div>  
+            </div>
+          </div>
+         </div>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" ><i class="mdi mdi-printer btn-icon-append p-2"></i> Print</button>
+          <button type="button" class="btn btn-danger text-white" data-dismiss="modal"><i class="mdi mdi-close-circle-outline btn-icon-append p-2"></i> Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
 				<!-- content-wrapper ends -->
 				<!-- partial:partials/_footer.html -->
 				<footer class="footer">

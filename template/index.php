@@ -8,7 +8,7 @@
 
   $user = $_SESSION['user_log_id'];
 
-  $get_time = mysqli_query($conn_db, "SELECT * FROM logs WHERE user_id = '$user' ORDER BY logid ASC");
+  $get_time = mysqli_query($conn_db, "SELECT * FROM logs WHERE user_id = '$user' ORDER BY logid DESC");
 
   $log_row = mysqli_fetch_array($get_time);
 

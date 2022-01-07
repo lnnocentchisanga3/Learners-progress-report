@@ -12,6 +12,36 @@
 
   $log_row = mysqli_fetch_array($get_time);
 
+$msgDis = "";
+
+  if (isset($_POST['assignTeacher'])) {
+
+    if (empty($_POST['userid']) || empty($_POST['class_st'] || empty($_POST['subject']))) {
+      $msgDis = '<h6 class="bg-danger text-white text-center p-2">Some Fields are EMPTY</h6>'; 
+    }else{
+
+      $check_lesson = mysqli_query($conn_db, "SELECT * FROM lessons WHERE class ='$_POST[class_st]' AND subject='$_POST[subject]' ");
+      $num = mysqli_num_rows($check_lesson);
+      if ($num == null || $num == 0) {
+
+        $convert_class = strtoupper($_POST['class_st']);
+        $convert_subject = strtoupper($_POST['subject']);
+
+        $assign_lesson = mysqli_query($conn_db, "INSERT INTO lessons(teacher_id,class,subject) VALUES('$_POST[userid]','$convert_class','$convert_subject')");
+
+    if ($assign_lesson == true) {
+      $msgDis = '<h6 class="bg-success text-white text-center p-2">Lesson is assigned successfully</h6>';
+    }else{
+      $msgDis = '<h6 class="bg-danger text-white text-center p-2">An error occoured. Please try again</h6>';
+    }
+
+      }else{
+        $msgDis = '<h6 class="bg-danger text-white text-center p-2">That Lesson has been assigned already</h6>';
+      }
+
+  }
+  }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -88,6 +118,18 @@
             </ul> -->
         </div>
       </nav>
+
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-4"></div>
+          <div class="col-md-4">
+
+              <?php echo $msgDis;?>
+            
+          </div>
+          <div class="col-md-4"></div>
+        </div>
+      </div>
     </div>
     <!-- partial -->
 		<div class="container-fluid page-body-wrapper">
@@ -126,6 +168,7 @@
                  <!--  <p class="card-description">
                     Basic form layout
                   </p> -->
+                  <small style="margin-bottom: 2rem;">(Select a teacher you want to assign a Lesson)</small>
                   <div class="table-responsive" style="height: 30rem;">
                     <table class="table table-bordered table-hover">
                     <thead class="bg-primary text-white">
@@ -163,7 +206,7 @@
                                        <td>'.$row_get_teachers["fullnames"].'</td>
 
                                       <td>';
-                                  echo '<button value="'.$row_get_teachers["user_log_id"].'" class="btn btn-primary rounded-0">Assign a Lesson <i class="mdi mdi-plus"></i></button>
+                                  echo '<button value="'.$row_get_teachers["user_log_id"].'" class="btn btn-primary rounded-0" onclick="getValue(this.value)">Assign a Lesson <i class="mdi mdi-plus"></i></button>
                                     </td>
                                     </tr>';
 
@@ -184,6 +227,12 @@
               </div>
             </div>
 
+            <script>
+              function getValue(userid){
+                document.getElementById('userId').value = userid;
+              }
+            </script>
+
             <div class="col-md-8 grid-margin stretch-card">
               <div class="card shadow">
                 <div class="card-body">
@@ -191,34 +240,30 @@
                  <!--  <p class="card-description">
                     Basic form layout
                   </p> -->
-                  <form class="form">
+                  <form class="form" method="POST">
                     <div class="form-group">
-                      <label for="input-group-append"><i class="mdi mdi-account-card-details"></i> User Log Id</label>
-                      <input type="text" class="form-control"  placeholder="Username">
+                      <label for="input-group-append"><i class="mdi mdi-account-card-details"></i> Teacher Log Id</label>
+                      <input type="text" class="form-control" id="userId" name="userid" placeholder="Teacher log id" readonly required>
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputEmail1"><i class="mdi mdi-phone-classic"></i> Phone</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                      <label for="exampleInputEmail1"><i class="mdi mdi-paper-cut-vertical"></i> Subject </label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" name="subject" placeholder="Enter the Subject.." required>
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputPassword1"><i class="mdi mdi-account-star"></i> User Type</label>
-                      <select class="form-control py-3">
-                        <option>Admin</option>
-                        <option>Class Teacher</option>
-                        <option>Subject Teacher</option>
+                      <label for="exampleInputPassword1"><i class="mdi mdi-home"></i>Class</label>
+                      <select class="form-control py-3" name="class_st">
+                        <?php
+                         require "../../processing/db_config.php";
+
+                         $get_classes = mysqli_query($conn_db, "SELECT * FROM class");
+                         while ($row_get_classes = mysqli_fetch_array($get_classes)) {
+                           echo '<option>'.$row_get_classes["class"].'</option>';
+                         }
+                        ?>
                       </select>
                     </div>
-                    <div class="form-group">
-                      <label for="exampleInputConfirmPassword1"><i class="mdi mdi-account-key"></i> Password</label>
-                      <input type="password" class="form-control" id="exampleInputConfirmPassword1" placeholder="Password">
-                    </div>
-                    <div class="form-check form-check-flat form-check-primary">
-                      <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input">
-                        Remember me
-                      </label>
-                    </div>
-                    <button type="submit" class="btn btn-primary me-2">Submit <i class="mdi mdi-near-me"></i></button>
+                    
+                    <button type="submit" class="btn btn-primary me-2" name="assignTeacher">Submit <i class="mdi mdi-near-me"></i></button>
                     <button class="btn btn-danger">Cancel <i class="mdi mdi-block-helper"></i></button>
                   </form>
                 </div>

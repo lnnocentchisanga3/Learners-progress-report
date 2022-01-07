@@ -17,7 +17,12 @@ if (mysqli_num_rows($get_class) == null || mysqli_num_rows($get_class) == 0 ) {
     $query = mysqli_query($conn_db ,$sql);
 
     if ($query) {
-     echo 'Class Assigned successfully';
+    $add_teacher = mysqli_query($conn_db, "INSERT INTO teachers(user_id) VALUES('$userid')");
+    if ($add_teacher) {
+       echo 'Class Assigned successfully';
+    }else{
+       echo 'Class not Assigned an error occoured, Try again';
+    }
     }else{
     echo 'Opps! an error occoured please try again';
     }
