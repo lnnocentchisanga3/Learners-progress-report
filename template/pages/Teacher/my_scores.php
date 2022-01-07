@@ -169,27 +169,23 @@
          		<div class="row" id="pupilDetails">
                  <form class="form" method="POST">
                     <div class="form-group">
-                      <label for="input-group-append"><i class="mdi mdi-account-card-details"></i> User Log Id</label>
+                      <label for="input-group-append"><i class="mdi mdi-account-card-details"></i> Mark Id</label>
                       <input type="text" name="userid" class="form-control" id="userId" readonly>
                     </div>
                     <div class="form-group">
-                      <label for="input-group-append"><i class="mdi mdi-account-circle"></i>Fullnames</label>
-                      <input type="text" name="names" class="form-control"  placeholder="Fullnames">
+                      <label for="input-group-append"><i class="mdi mdi-account-circle"></i>score</label>
+                      <input type="text" name="names" class="form-control"  placeholder="score">
                     </div>
-                    <div class="form-group">
-                      <label for="exampleInputEmail1"><i class="mdi mdi-phone-classic"></i> Phone</label>
-                      <input type="text" name="phone" class="form-control" id="exampleInputEmail1" placeholder="Phone">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputPassword1"><i class="mdi mdi-account-star"></i> User Type</label>
-                      <select class="form-control py-3" name="usertype">
-                        <option>Admin</option>
-                        <option>Teacher</option>
-                      </select>
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputConfirmPassword1"><i class="mdi mdi-account-key"></i> Password</label>
-                      <input type="password" name="pwd" class="form-control" id="exampleInputConfirmPassword1" placeholder="Password">
+                    <label for="input-group-append"><i class="mdi mdi-account-circle"></i>Subject</label>
+                      <input type="text" name="names" class="form-control"  placeholder="Subject">
+                      <label for="input-group-append"><i class="mdi mdi-account-circle"></i>Test Number</label>
+                      <input type="text" name="names" class="form-control"  placeholder="Test Number">
+                      <label for="input-group-append"><i class="mdi mdi-account-circle"></i>Term</label>
+                      <input type="text" name="names" class="form-control"  placeholder="Term">
+                      <label for="input-group-append"><i class="mdi mdi-account-circle"></i>Pupil ID</label>
+                      <input type="text" name="names" class="form-control"  placeholder="Pupil ID">
+                      <label for="input-group-append"><i class="mdi mdi-account-circle"></i>Teacher ID</label>
+                      <input type="text" name="names" class="form-control"  placeholder="Teacher ID">
                     </div>
                     <button type="submit" name="submit_teacher" class="btn btn-primary me-2">Submit <i class="mdi mdi-near-me"></i></button>
                     <button class="btn btn-danger" type="reset">reset <i class="mdi mdi-block-helper"></i></button>
