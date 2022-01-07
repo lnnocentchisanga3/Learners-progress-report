@@ -120,10 +120,10 @@
 </div>
 </div>
 
-  <script>
-  	function getPerformance(pupilId){
+<script>
+    function getPerformance(pupilId){
 
-  		/*var pupilNames = document.getElementById('pupilNames').value;
+      /*var pupilNames = document.getElementById('pupilNames').value;
         var classPupil = document.getElementById('classPupil').value;*/
 
         var xhttp = new XMLHttpRequest();
@@ -136,8 +136,10 @@
       xhttp.send();
 
      /* window.location.reload();*/
-  	}
+    }
   </script>
+
+  
   
 
     <!-- End of resulsts modal -->
@@ -150,76 +152,76 @@
       
         <!-- Modal Header -->
         <div class="modal-header">
-          <h4 class="modal-title"><i class="mdi mdi-chart-line btn-icon-append p-2"></i> Performance</h4>
+          <h4 class="modal-title"><i class="mdi mdi-plus btn-icon-append p-2"></i> Add a score record</h4>
         </div>
         
         <!-- Modal body -->
         <div class="modal-body">
-         <div class="card">
-         	<div class="row">
-         		<div class="col-md-3 mx-1 my-2 ">
-         			<img src="../../images/faces/face1.jpg" class="shadow-sm" style="height: 10rem">
-         		</div>
-         		<div class="col-md-3 mx-1 my-2">Class : 10 N</div>
-         		<div class="col-md-3 mx-1 my-2">Names : Mercy Nambeya</div>
-         	</div>
-         	<div class="card">
-         		<div class="card-header">The subject scores</div>
-         		<div class="card-body">
-         		<div class="row" id="pupilDetails">
-                 <form class="form" method="POST">
-                    <div class="form-group">
-                      <label for="input-group-append"><i class="mdi mdi-account-card-details"></i> Mark Id</label>
-                      <input type="text" name="userid" class="form-control" id="userId" readonly>
-                    </div>
-                    <div class="form-group">
-                      <label for="input-group-append"><i class="mdi mdi-account-circle"></i>score</label>
-                      <input type="text" name="names" class="form-control"  placeholder="Score">
-                    </div>
-                    <label for="input-group-append"><i class="mdi mdi-account-circle"></i>Subject</label>
-                      <input type="text" name="names" class="form-control"  placeholder="Subject">
-                      <label for="input-group-append"><i class="mdi mdi-account-circle"></i>Test Number</label>
-                      <input type="text" name="names" class="form-control"  placeholder="Test Number">
-                      <label for="input-group-append"><i class="mdi mdi-account-circle"></i>Term</label>
-                      <input type="text" name="names" class="form-control"  placeholder="Term">
-                      <label for="input-group-append"><i class="mdi mdi-account-circle"></i>Pupil ID</label>
-                      <input type="text" name="names" class="form-control"  placeholder="Pupil ID">
-                      <label for="input-group-append"><i class="mdi mdi-account-circle"></i>Teacher ID</label>
-                      <input type="text" name="names" class="form-control"  placeholder="Teacher ID">
-                    </div>
-                    <button type="submit" name="submit_teacher" class="btn btn-primary me-2">Submit <i class="mdi mdi-near-me"></i></button>
-                    <button class="btn btn-danger" type="reset">reset <i class="mdi mdi-block-helper"></i></button>
-                  </form>  
-         		</div>
-         	</div>
-         </div>
-        </div>
-        <script>
-          function getId(id){
-            /*document.getElementById('userId').value = id;*/
-
-            var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {
-              if (this.readyState == 4 && this.status == 200) {
-                document.getElementById('pupilDetails').innerHTML = this.responseText;
-              }
-            };
-            xhttp.open("GET", "../../processing/get_pupil_data.php?pupil="+pupilId, true);
-            xhttp.send();
-          }
-        </script>
-        
-        <!-- Modal footer -->
-        <div class="modal-footer">
-
-          <button type="button" class="btn btn-danger text-white" data-dismiss="modal"><i class="mdi mdi-close-circle-outline btn-icon-append p-2"></i> Close</button>
-        </div> 
-        
+         <div class="card" id="pupilDetails">
+     
       </div>
+      <!-- Modal footer -->
+        <div class="modal-footer">
+          <!-- <button type="button" class="btn btn-success" ><i class="mdi mdi-printer btn-icon-append p-2"></i> Print</button> -->
+          <button type="button" class="btn btn-danger text-white" data-dismiss="modal"><i class="mdi mdi-close-circle-outline btn-icon-append p-2"></i> Close</button>
+        </div>
     </div>
   </div>
 </div>
 </div>
 
+<script>
+  function addScorePupil(){
+    var id = document.getElementById('pupilId').value;
+    var score = document.getElementById('score').value;
+    var sub = document.getElementById('sub').value;
 
+    var tnum = document.getElementById('tnum').value;
+    var termnum = document.getElementById('termnum').value;
+
+    if (id == 0 || score == 0 || sub == 0 || termnum == 0 || tnum == 0){
+      window.alert("Some os the fields are empty");
+
+    }else{
+
+       var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          window.alert(this.responseText);
+        }
+      };
+      xhttp.open("GET", "../../processing/get_pupil_data.php?pupil="+id+"&score="+score+"&sub="+sub+"&tnum="+tnum+"&termnum="+termnum, true);
+      xhttp.send();
+
+      window.location.reload();
+    }
+
+  }
+</script>
+
+
+
+    </div>
+  </div>
+</div>
+</div>
+
+<script>
+    function getId(pupilId){
+
+      /*var pupilNames = document.getElementById('pupilNames').value;
+        var classPupil = document.getElementById('classPupil').value;*/
+
+        var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById('pupilDetails').innerHTML = this.responseText;
+        }
+      };
+      xhttp.open("GET", "./displayData.php?pupil="+pupilId, true);
+      xhttp.send();
+
+     /* window.location.reload();*/
+    }
+  </script>
  
