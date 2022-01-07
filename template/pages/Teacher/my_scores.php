@@ -48,7 +48,7 @@
                                         <td>'.$row_get_pupils["class"].'</td>
                                          <td>
                                       
-                                        <button class="btn btn-primary btn-sm offset-md-2" data-toggle="modal" data-target="#recordScoresModal"><i class="mdi mdi-plus btn-icon-append p-2"></i> Add score</button>
+                                        <button class="btn btn-primary btn-sm offset-md-2" data-toggle="modal" data-target="#recordScoresModal" value="'.$row_get_pupils["pupil_id"].'" onclick="getId(this.value)"><i class="mdi mdi-plus btn-icon-append p-2"></i> Add score</button>
 
                                         <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#viewResultsModal"value="'.$row_get_pupils["pupil_id"].'" onclick="getPerformance(this.value)"><i class="mdi mdi-chart-line btn-icon-append p-2"></i> View Performance</button>              
                                          </td>
@@ -166,11 +166,11 @@
          	<div class="card">
          		<div class="card-header">The subject scores</div>
          		<div class="card-body">
-         		<div class="row">
+         		<div class="row" id="pupilDetails">
                  <form class="form" method="POST">
                     <div class="form-group">
                       <label for="input-group-append"><i class="mdi mdi-account-card-details"></i> User Log Id</label>
-                      <input type="text" name="userid" class="form-control"  placeholder="User ID">
+                      <input type="text" name="userid" class="form-control" id="userId" readonly>
                     </div>
                     <div class="form-group">
                       <label for="input-group-append"><i class="mdi mdi-account-circle"></i>Fullnames</label>
@@ -191,19 +191,33 @@
                       <label for="exampleInputConfirmPassword1"><i class="mdi mdi-account-key"></i> Password</label>
                       <input type="password" name="pwd" class="form-control" id="exampleInputConfirmPassword1" placeholder="Password">
                     </div>
-                    <!-- <button type="submit" name="submit_teacher" class="btn btn-primary me-2">Submit <i class="mdi mdi-near-me"></i></button>
-                    <button class="btn btn-danger" type="reset">Cancel <i class="mdi mdi-block-helper"></i></button> -->
+                    <button type="submit" name="submit_teacher" class="btn btn-primary me-2">Submit <i class="mdi mdi-near-me"></i></button>
+                    <button class="btn btn-danger" type="reset">reset <i class="mdi mdi-block-helper"></i></button>
                   </form>  
          		</div>
          	</div>
          </div>
         </div>
+        <script>
+          function getId(id){
+            /*document.getElementById('userId').value = id;*/
+
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+              if (this.readyState == 4 && this.status == 200) {
+                document.getElementById('pupilDetails').innerHTML = this.responseText;
+              }
+            };
+            xhttp.open("GET", "../../processing/get_pupil_data.php?pupil="+pupilId, true);
+            xhttp.send();
+          }
+        </script>
         
         <!-- Modal footer -->
         <div class="modal-footer">
-        	<button type="button" class="btn btn-success" ><i class="mdi mdi-printer btn-icon-append p-2"></i> Print</button>
+        	<!-- <button type="button" class="btn btn-success" ><i class="mdi mdi-printer btn-icon-append p-2"></i> Print</button>-->
           <button type="button" class="btn btn-danger text-white" data-dismiss="modal"><i class="mdi mdi-close-circle-outline btn-icon-append p-2"></i> Close</button>
-        </div>
+        </div> 
         
       </div>
     </div>
