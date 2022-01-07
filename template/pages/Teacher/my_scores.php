@@ -167,68 +167,33 @@
          		<div class="card-header">The subject scores</div>
          		<div class="card-body">
          		<div class="row">
-				<div class="col-md-2">
-					<h4 class="card-header bg-primary text-white">Mathematics</h4>
-					<ol>
-						<li>hello</li>
-						<li>hello</li>
-					</ol>
-				</div>
-				<div class="col-md-2">
-					<h4 class="card-header bg-primary text-white">Mathematics</h4>
-					<ol>
-						<li>hello</li>
-						<li>hello</li>
-					</ol>
-				</div>
-				<div class="col-md-2">
-					<h4 class="card-header bg-primary text-white">Mathematics</h4>
-					<ol>
-						<li>hello</li>
-						<li>hello</li>
-					</ol>
-				</div>
-				<div class="col-md-2">
-					<h4 class="card-header bg-primary text-white">Mathematics</h4>
-					<ol>
-						<li>hello</li>
-						<li>hello</li>
-					</ol>
-				</div>
-				<div class="col-md-2">
-					<h4 class="card-header bg-primary text-white">Mathematics</h4>
-					<ol>
-						<li>hello</li>
-						<li>hello</li>
-					</ol>
-				</div>
-				<div class="col-md-2">
-					<h4 class="card-header bg-primary text-white">Mathematics</h4>
-					<ol>
-						<li>hello</li>
-						<li>hello</li>
-					</ol>
-				</div>
-				<div class="col-md-2">
-					<h4 class="card-header bg-primary text-white">Mathematics</h4>
-					<ol>
-						<li>hello</li>
-						<li>hello</li>
-					</ol>
-				</div>
-				<div class="col-md-2">
-					<h4 class="card-header bg-primary text-white">Mathematics</h4>
-					<ol>
-						<li>hello</li>
-						<li>hello</li>
-					</ol></div>
-				<div class="col-md-2">
-					<h4 class="card-header bg-primary text-white">Mathematics</h4>
-					<ol>
-						<li>hello</li>
-						<li>hello</li>
-					</ol>
-				</div>  
+                 <form class="form" method="POST">
+                    <div class="form-group">
+                      <label for="input-group-append"><i class="mdi mdi-account-card-details"></i> User Log Id</label>
+                      <input type="text" name="userid" class="form-control"  placeholder="User ID">
+                    </div>
+                    <div class="form-group">
+                      <label for="input-group-append"><i class="mdi mdi-account-circle"></i>Fullnames</label>
+                      <input type="text" name="names" class="form-control"  placeholder="Fullnames">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1"><i class="mdi mdi-phone-classic"></i> Phone</label>
+                      <input type="text" name="phone" class="form-control" id="exampleInputEmail1" placeholder="Phone">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1"><i class="mdi mdi-account-star"></i> User Type</label>
+                      <select class="form-control py-3" name="usertype">
+                        <option>Admin</option>
+                        <option>Teacher</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputConfirmPassword1"><i class="mdi mdi-account-key"></i> Password</label>
+                      <input type="password" name="pwd" class="form-control" id="exampleInputConfirmPassword1" placeholder="Password">
+                    </div>
+                    <!-- <button type="submit" name="submit_teacher" class="btn btn-primary me-2">Submit <i class="mdi mdi-near-me"></i></button>
+                    <button class="btn btn-danger" type="reset">Cancel <i class="mdi mdi-block-helper"></i></button> -->
+                  </form>  
          		</div>
          	</div>
          </div>
