@@ -4,15 +4,22 @@ require "db_config.php";
   
     if (isset($_GET['id'])){
   
-        $$row_get_teachers=$_GET['user_log_id'];
+        $id=$_GET['id'];
   
-        $sql="UPDATE `courses` SET 
-             `status`=1 WHERE id='$course_id'";
+        $sql="UPDATE `users` SET `status`='active' WHERE user_log_id='$id'";
+
+        $query = mysqli_query($conn_db, $sql);
+
+        if ($query) {
+             // Go back 
+            header('location: ../index.php');
+        }else{
+            echo "Error : ".mysqli_error($conn_db);
+        }
   
         // Execute the query
         mysqli_query($conn_db,$sql);
     }
   
-    // Go back 
-    header('location: index.php');
+   
 ?>

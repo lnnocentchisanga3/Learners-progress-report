@@ -1,12 +1,25 @@
 <?php
-require "db_config.php";
-        $$row_get_teachers=$_GET['user_log_id'];
   
-        $sql="UPDATE `courses` SET 
-            `status`=0 WHERE id='$course_id'";
+require "db_config.php";
+  
+    if (isset($_GET['id'])){
+  
+        $id=$_GET['id'];
+  
+        $sql="UPDATE `users` SET `status`='offline' WHERE user_log_id='$id'";
 
-        mysqli_query($con,$sql);
+        $query = mysqli_query($conn_db, $sql);
+
+        if ($query) {
+             // Go back 
+            header('location: ../index.php');
+        }else{
+            echo "Error : ".mysqli_error($conn_db);
+        }
+  
+        // Execute the query
+        mysqli_query($conn_db,$sql);
     }
   
-    header('location: index.php');
+   
 ?>

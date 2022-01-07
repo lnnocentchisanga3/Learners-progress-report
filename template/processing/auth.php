@@ -19,7 +19,7 @@ if (isset($_POST['login'])) {
 
 /*getting the users from the database*/
 
-	$get_user = "SELECT * FROM users WHERE user_log_id = '$converted_str' ";
+	$get_user = "SELECT * FROM users WHERE user_log_id = '$converted_str' AND status ='active' ";
 
 	$get_user_query = mysqli_query($conn_db, $get_user);
 

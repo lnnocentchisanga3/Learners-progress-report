@@ -271,9 +271,9 @@
                                       <td>'.$row_get_teachers["status"].'</td>
                                       <td>';
                                       if ($row_get_teachers["status"] == "offline") {
-                                       echo '<a href="activate.php?id="'.$row_get_teachers["user_log_id"].'" class="btn btn-primary rounded-0 mx-1">Activate </a>';
+                                       echo '<a href="./processing/activate.php?id='.$row_get_teachers["user_log_id"].'" class="btn btn-primary rounded-0 mx-1">Activate </a>';
                                       }else{
-                                        echo '<a href="deactivate.php?id="'.$row_get_teachers["user_log_id"].'" class="btn btn-danger text-white  rounded-0 mx-1">Deactivate</a>';
+                                        echo '<a href="./processing/deactivate.php?id='.$row_get_teachers["user_log_id"].'" class="btn btn-danger text-white  rounded-0 mx-1">Deactivate</a>';
                                       }
                                   echo '<a href="./processing/edit_teacher.php?id='.$row_get_teachers["user_log_id"].'" class="btn btn-success rounded-0">Edit <i class="mdi mdi-border-color"></i></a>
                                        <button class="btn btn-warning rounded-0" value="'.$row_get_teachers["user_log_id"].'"  data-toggle="modal" data-target="#childDetails" onclick="getUserId(this.value)">Assign a Class</button>

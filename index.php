@@ -42,7 +42,7 @@ require 'template/processing/db_config.php';
               		if ($msg == "error_pwd_invalid") {
               			echo "<h4 class='bg-danger p-2 text-white'>The password is invalid</h4>";
               		}elseif ($msg == "error_user_was_not_found") {
-              			echo "<h4 class='bg-danger p-2 text-white'>Sorry, you are not in the system</h4>";
+              			echo "<h4 class='bg-danger p-2 text-white'>Sorry, you are not in the system or your account is not activated</h4>";
               		}elseif ($msg == "error_user_not_set") {
               			echo "<h4 class='bg-danger p-2 text-white'>Login error, please try again</h4>";
               		}
