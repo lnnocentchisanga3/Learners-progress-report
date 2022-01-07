@@ -275,7 +275,7 @@
                                       }else{
                                         echo '<a href="./processing/deactivate.php?id='.$row_get_teachers["user_log_id"].'" class="btn btn-danger text-white  rounded-0 mx-1">Deactivate</a>';
                                       }
-                                  echo '<a href="./processing/edit_teacher.php?id='.$row_get_teachers["user_log_id"].'" class="btn btn-success rounded-0">Edit <i class="mdi mdi-border-color"></i></a>
+                                  echo '<a href="./pages/forms/add_teacher.php?id='.$row_get_teachers["user_log_id"].'" class="btn btn-success rounded-0">Edit <i class="mdi mdi-border-color"></i></a>
                                        <button class="btn btn-warning rounded-0" value="'.$row_get_teachers["user_log_id"].'"  data-toggle="modal" data-target="#childDetails" onclick="getUserId(this.value)">Assign a Class</button>
                                       <a href="./processing/delete_teacher.php?id='.$row_get_teachers["user_log_id"].'" class="btn btn-danger rounded-0"> Delete <i class="mdi mdi-delete-forever"></i></a>
                                     </td>
@@ -392,7 +392,7 @@
                                         <td>'.$row_get_pupils["pupil_name"].'</td>
                                         <td>'.$row_get_pupils["class"].'</td>
                                          <td>
-                                       <a href="" class="btn btn-success btn-sm ">Edit</a>
+                                       
                                         <a href="./processing/delete_pupil.php?id='.$row_get_pupils["pupil_id"].'" class="btn btn-danger btn-sm">Delete</a>                
                                          </td>
                                          </tr>';
@@ -489,7 +489,7 @@
                                        <td>'.$row_get_class["class"].'</td>
                                         <td>'.$row_get_class["teacher_id"].'</td>
                                          <td>
-                                       <a href="./pages/forms/.php" class="btn btn-success btn-sm ">Edit</a>
+                                       
                                         <a href="./processing/delete.php?id='.$row_get_class["class_id"].'" class="btn btn-danger btn-sm">Delete</a>                
                                          </td>
                                          </tr>';
@@ -512,7 +512,8 @@
 							</div>
 						</div>
 
-
+<!-- <a href="./pages/forms/.php" class="btn btn-success btn-sm ">Edit</a>
+<a href="" class="btn btn-success btn-sm ">Edit</a> -->
 					</div>
 
 				</div>

@@ -51,6 +51,13 @@
         <?php
     }
     
+  }elseif (isset($_GET['id'])) {
+    $t_id = $_GET['id'];
+
+    $get_teachers_data = mysqli_query($conn_db, "SELECT * FROM users WHERE user_log_id='$t_id' ");
+    $row_teacher = mysqli_fetch_array($get_teachers_data);
+
+
   }
 
 ?>
@@ -150,37 +157,72 @@
 						</div>
 					</div>
 
+          <?php
+          if (isset($_POST['save_details'])) {
+
+            $names = $_POST['names'];
+            $userid = strtoupper($_POST['userid']);
+            $phone = $_POST['phone'];
+            $usertype = $_POST['usertype'];
+            $pwd = $_POST['pwd'];
+
+            $save_data = mysqli_query($conn_db, "UPDATE users SET fullnames='$names',phone='$phone',password='$pwd',user_type='$usertype' WHERE user_log_id='$userid' ");
+
+             if ($save_data == true) {
+                  ?> 
+                  <script>
+                    window.alert("Teacher Details updated successful");
+                  </script>
+                  <?php
+              }else{
+                echo "user not added ".mysqli_error($conn_db);
+                ?> 
+                  <script>
+                    window.alert("Teacher Details were not updated");
+                  </script>
+                  <?php
+              }
+
+          }
+          ?>
+
 					<div class="row">
             <div class="col-md-8 offset-md-2 grid-margin stretch-card">
               <div class="card shadow">
                 <div class="card-body">
-                  <h4 class="card-title"><i class="mdi mdi-account-plus"></i> Add A teacher</h4>
+                 <?php
+                 if (isset($_GET['id'])) {
+                   echo ' <h4 class="card-title"><i class="mdi mdi-account-plus"></i> Edit teacher details</h4>';
+                 }else{
+                  echo ' <h4 class="card-title"><i class="mdi mdi-account-plus"></i> Add A teacher</h4>';
+                 }
+                 ?>
                  <!--  <p class="card-description">
                     Basic form layout
                   </p> -->
                   <form class="form" method="POST">
                     <div class="form-group">
                       <label for="input-group-append"><i class="mdi mdi-account-card-details"></i> User Log Id</label>
-                      <input type="text" name="userid" class="form-control"  placeholder="User ID">
+                      <input type="text" name="userid" class="form-control"  value="<?php echo $row_teacher['user_log_id'] ?>" readonly >
                     </div>
                     <div class="form-group">
                       <label for="input-group-append"><i class="mdi mdi-account-circle"></i>Fullnames</label>
-                      <input type="text" name="names" class="form-control"  placeholder="Fullnames">
+                      <input type="text" name="names" class="form-control"  value="<?php echo $row_teacher['fullnames'] ?>">
                     </div>
                     <div class="form-group">
                       <label for="exampleInputEmail1"><i class="mdi mdi-phone-classic"></i> Phone</label>
-                      <input type="text" name="phone" class="form-control" id="exampleInputEmail1" placeholder="Phone">
+                      <input type="text" name="phone" class="form-control" id="exampleInputEmail1" value="<?php echo $row_teacher['phone'] ?>">
                     </div>
                     <div class="form-group">
                       <label for="exampleInputPassword1"><i class="mdi mdi-account-star"></i> User Type</label>
                       <select class="form-control py-3" name="usertype">
-                        <option>Admin</option>
+                        <option>admin</option>
                         <option>Teacher</option>
                       </select>
                     </div>
                     <div class="form-group">
                       <label for="exampleInputConfirmPassword1"><i class="mdi mdi-account-key"></i> Password</label>
-                      <input type="password" name="pwd" class="form-control" id="exampleInputConfirmPassword1" placeholder="Password">
+                      <input type="password" name="pwd" class="form-control" id="exampleInputConfirmPassword1" value="<?php echo $row_teacher['password'] ?>">
                     </div>
                     <!-- <div class="form-check form-check-flat form-check-primary">
                       <label class="form-check-label">
@@ -188,7 +230,13 @@
                         Remember me
                       </label>
                     </div> -->
-                    <button type="submit" name="submit_teacher" class="btn btn-primary me-2">Submit <i class="mdi mdi-near-me"></i></button>
+                   <?php
+                   if (isset($_GET['id'])) {
+                     echo ' <button type="submit" name="save_details" class="btn btn-primary me-2">Save <i class="mdi mdi-content-save-all"></i></button>';
+                   }else{
+                    echo ' <button type="submit" name="submit_teacher" class="btn btn-primary me-2">Submit <i class="mdi mdi-near-me"></i></button>';
+                   }
+                   ?>
                     <button class="btn btn-danger" type="reset">Cancel <i class="mdi mdi-block-helper"></i></button>
                   </form>
                 </div>
