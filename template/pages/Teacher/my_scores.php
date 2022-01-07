@@ -174,7 +174,7 @@
                     </div>
                     <div class="form-group">
                       <label for="input-group-append"><i class="mdi mdi-account-circle"></i>score</label>
-                      <input type="text" name="names" class="form-control"  placeholder="score">
+                      <input type="text" name="names" class="form-control"  placeholder="Score">
                     </div>
                     <label for="input-group-append"><i class="mdi mdi-account-circle"></i>Subject</label>
                       <input type="text" name="names" class="form-control"  placeholder="Subject">
@@ -197,7 +197,7 @@
         
         <!-- Modal footer -->
         <div class="modal-footer">
-        	<button type="button" class="btn btn-success" ><i class="mdi mdi-printer btn-icon-append p-2"></i> Print</button>
+<!--         	<button type="button" class="btn btn-success" ><i class="mdi mdi-printer btn-icon-append p-2"></i> Print</button> -->
           <button type="button" class="btn btn-danger text-white" data-dismiss="modal"><i class="mdi mdi-close-circle-outline btn-icon-append p-2"></i> Close</button>
         </div>
         
