@@ -200,7 +200,10 @@
                  <!--  <p class="card-description">
                     Basic form layout
                   </p> -->
-                  <form class="form" method="POST">
+                  <?php
+                  if (isset($_GET['id'])) {
+                    ?>
+                    <form class="form" method="POST">
                     <div class="form-group">
                       <label for="input-group-append"><i class="mdi mdi-account-card-details"></i> User Log Id</label>
                       <input type="text" name="userid" class="form-control"  value="<?php echo $row_teacher['user_log_id'] ?>" readonly >
@@ -224,12 +227,37 @@
                       <label for="exampleInputConfirmPassword1"><i class="mdi mdi-account-key"></i> Password</label>
                       <input type="password" name="pwd" class="form-control" id="exampleInputConfirmPassword1" value="<?php echo $row_teacher['password'] ?>">
                     </div>
-                    <!-- <div class="form-check form-check-flat form-check-primary">
-                      <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input">
-                        Remember me
-                      </label>
-                    </div> -->
+                    <?php
+                  }else{
+                    ?>
+                    <form class="form" method="POST">
+                    <div class="form-group">
+                      <label for="input-group-append"><i class="mdi mdi-account-card-details"></i> User Log Id</label>
+                      <input type="text" name="userid" class="form-control"  placeholder="User log id" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="input-group-append"><i class="mdi mdi-account-circle"></i>Fullnames</label>
+                      <input type="text" name="names" class="form-control" placeholder="Fullnames" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1"><i class="mdi mdi-phone-classic"></i> Phone</label>
+                      <input type="text" name="phone" class="form-control" id="exampleInputEmail1" placeholder="Phone" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1"><i class="mdi mdi-account-star"></i> User Type</label>
+                      <select class="form-control py-3" name="usertype">
+                        <option>admin</option>
+                        <option>Teacher</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputConfirmPassword1"><i class="mdi mdi-account-key"></i> Password</label>
+                      <input type="password" name="pwd" class="form-control" id="exampleInputConfirmPassword1" placeholder="Password" required>
+                    </div>
+                    <?php
+                  }
+                  ?>
+                    
                    <?php
                    if (isset($_GET['id'])) {
                      echo ' <button type="submit" name="save_details" class="btn btn-primary me-2">Save <i class="mdi mdi-content-save-all"></i></button>';
