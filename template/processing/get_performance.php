@@ -46,17 +46,48 @@ if (!$query) {
          		<div class="card-header">The subject scores</div>
          		<div class="card-body">
          		<div class="row">';
+
+         		echo '<table class="table table-hover table-striped table-bordered table-responsive">
+							<thead class="bg-primary text-white">
+								<th>Subject</th>
+								<th>Term</th>
+								<th>Test 1</th>
+								<th>Test 2</th>
+								<th>Test 3</th>
+								<th>Total Score</th>
+								<th>Percentage %</th>
+								<th>Actions</th>
+							</thead><tbody>';
+
          		while ($row = mysqli_fetch_array($query)) {
-         			echo '<div class="col-md-2">
-         			<h5>Term'.$row['term'].'</h5>
-					<h4 class="card-header bg-primary text-white">'.$row["sub"].' '.' '.' [Test'.$row['testnum'].']</h4>
-					<ul class="nav">
-						<li>'.' '.$row["score"].'</li>
-					</ul>
-					</div>';
+
+         			$sum = $row["score"] + $row["score_1"] + $row["score_2"];
+
+         			$percent = $sum * 100/300;
+         			
+							echo '<tr>
+								<td>'.$row["sub"].'</td>
+								<td>'.$row["term"].'</td>
+								<td>'.$row["score"].'</td>
+								<td>'.$row["score_1"].'</td>
+								<td>'.$row["score_2"].'</td>
+
+								<td>'.$sum.'</td>';
+								if ($percent < 50) {
+									echo '<td class="bg-danger text-white">'.round($percent,2).'% (need to work hard)</td>';
+								}else{
+									echo '<td>'.round($percent,2).'%</td>';
+								}
+								echo '<td>
+									
+									<a href="#" class="badge badge-danger"><i class="mdi mdi-delete-forever"></i> Delete</a>
+								</td>
+									</tr>';
          		}
 
-        echo '</div>
+        echo '</tbody>
+				</table>
+				</div>
          	</div>
          </div>
         </div>';
@@ -65,6 +96,8 @@ if (!$query) {
 }
 
 ?>
+
+
 
          	
 				

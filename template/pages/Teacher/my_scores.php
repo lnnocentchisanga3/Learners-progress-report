@@ -174,12 +174,14 @@
   function addScorePupil(){
     var id = document.getElementById('pupilId').value;
     var score = document.getElementById('score').value;
+    var score1 = document.getElementById('score1').value;
+    var score2 = document.getElementById('score2').value;
     var sub = document.getElementById('sub').value;
 
-    var tnum = document.getElementById('tnum').value;
+    /*var tnum = document.getElementById('tnum').value;*/
     var termnum = document.getElementById('termnum').value;
 
-    if (id == 0 || score == 0 || sub == 0 || termnum == 0 || tnum == 0){
+    if (id == 0 || score == 0 || sub == 0 || termnum == 0){
       window.alert("Some os the fields are empty");
 
     }else{
@@ -190,7 +192,7 @@
           window.alert(this.responseText);
         }
       };
-      xhttp.open("GET", "../../processing/get_pupil_data.php?pupil="+id+"&score="+score+"&sub="+sub+"&tnum="+tnum+"&termnum="+termnum, true);
+      xhttp.open("GET", "../../processing/get_pupil_data.php?pupil="+id+"&score="+score+"&score1="+score1+"&score2="+score2+"&sub="+sub+"&termnum="+termnum, true);
       xhttp.send();
 
       window.location.reload();

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jan 07, 2022 at 01:18 PM
+-- Generation Time: Feb 19, 2022 at 10:42 PM
 -- Server version: 5.7.31
--- PHP Version: 7.3.21
+-- PHP Version: 7.4.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -83,7 +83,7 @@ CREATE TABLE IF NOT EXISTS `logs` (
   `status` varchar(255) NOT NULL,
   `date_added` varchar(255) NOT NULL,
   PRIMARY KEY (`logid`)
-) ENGINE=MyISAM AUTO_INCREMENT=92 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=144 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `logs`
@@ -180,7 +180,59 @@ INSERT INTO `logs` (`logid`, `user_id`, `log_time`, `status`, `date_added`) VALU
 (88, 'LPR24683', '12:02:14', 'logout', '2022/01/07'),
 (89, 'LPR102030', '12:02:21', 'login', '2022/01/07'),
 (90, 'LPR102030', '12:02:37', 'logout', '2022/01/07'),
-(91, 'LPR24683', '12:02:44', 'login', '2022/01/07');
+(91, 'LPR24683', '12:02:44', 'login', '2022/01/07'),
+(92, 'LPR24683', '13:21:17', 'logout', '2022/01/07'),
+(93, 'LPR2468', '13:21:23', 'login', '2022/01/07'),
+(94, 'LPR2468', '13:33:57', 'logout', '2022/01/07'),
+(95, 'LPR102030', '13:34:17', 'login', '2022/01/07'),
+(96, 'LPR102030', '13:34:21', 'logout', '2022/01/07'),
+(97, 'LPR2468', '13:34:46', 'login', '2022/01/07'),
+(98, 'LPR2468', '13:34:57', 'logout', '2022/01/07'),
+(99, 'LPR2468', '13:35:59', 'login', '2022/01/07'),
+(100, 'LPR2468', '13:37:12', 'logout', '2022/01/07'),
+(101, 'LPR24683', '13:37:29', 'login', '2022/01/07'),
+(102, 'LPR24683', '13:37:35', 'logout', '2022/01/07'),
+(103, 'LPR102030', '13:37:41', 'login', '2022/01/07'),
+(104, 'LPR102030', '13:38:29', 'logout', '2022/01/07'),
+(105, 'LPR24683', '13:38:35', 'login', '2022/01/07'),
+(106, 'LPR24683', '14:01:24', 'logout', '2022/01/07'),
+(107, 'LPR2468', '14:01:32', 'login', '2022/01/07'),
+(108, 'LPR2468', '14:04:25', 'logout', '2022/01/07'),
+(109, 'LPR24683', '14:04:32', 'login', '2022/01/07'),
+(110, 'LPR24683', '14:11:54', 'logout', '2022/01/07'),
+(111, 'LPR2468', '14:11:58', 'login', '2022/01/07'),
+(112, 'LPR2468', '15:03:47', 'logout', '2022/01/07'),
+(113, 'LPR24683', '15:04:49', 'login', '2022/01/07'),
+(114, 'LPR24683', '15:05:46', 'logout', '2022/01/07'),
+(115, 'LPR24683', '15:05:52', 'login', '2022/01/07'),
+(116, 'LPR24683', '16:42:39', 'logout', '2022/01/07'),
+(117, 'LPR2468', '20:05:59', 'login', '2022/01/07'),
+(118, 'LPR2468', '20:06:54', 'logout', '2022/01/07'),
+(119, 'LPR24683', '20:07:01', 'login', '2022/01/07'),
+(120, 'LPR24683', '20:07:36', 'logout', '2022/01/07'),
+(121, 'LPR2468', '07:46:23', 'login', '2022/01/08'),
+(122, 'LPR2468', '06:21:27', 'logout', '2022/01/25'),
+(123, 'LPR2468', '09:40:20', 'login', '2022/02/09'),
+(124, 'LPR2468', '09:40:58', 'logout', '2022/02/09'),
+(125, 'LPR1234', '09:41:13', 'login', '2022/02/09'),
+(126, 'LPR1234', '09:41:39', 'logout', '2022/02/09'),
+(127, 'LPR102030', '09:41:53', 'login', '2022/02/09'),
+(128, 'LPR102030', '09:42:49', 'logout', '2022/02/09'),
+(129, 'LPR24683', '09:43:28', 'login', '2022/02/09'),
+(130, 'LPR24683', '09:44:25', 'logout', '2022/02/09'),
+(131, 'LPR2468', '18:50:46', 'login', '2022/02/09'),
+(132, 'LPR2468', '18:50:57', 'logout', '2022/02/09'),
+(133, 'LPR24683', '19:01:20', 'login', '2022/02/09'),
+(134, 'LPR24683', '19:03:05', 'logout', '2022/02/09'),
+(135, 'LPR2468', '19:03:14', 'login', '2022/02/09'),
+(136, 'LPR2468', '19:04:04', 'logout', '2022/02/09'),
+(137, 'LPR24683', '19:07:09', 'login', '2022/02/16'),
+(138, 'LPR24683', '19:13:11', 'logout', '2022/02/16'),
+(139, 'LPR24683', '19:13:18', 'login', '2022/02/16'),
+(140, 'LPR24683', '19:13:22', 'logout', '2022/02/16'),
+(141, 'LPR24683', '19:14:36', 'login', '2022/02/16'),
+(142, 'LPR24683', '19:14:40', 'logout', '2022/02/16'),
+(143, 'LPR24683', '17:59:11', 'login', '2022/02/17');
 
 -- --------------------------------------------------------
 
@@ -192,21 +244,33 @@ DROP TABLE IF EXISTS `marks`;
 CREATE TABLE IF NOT EXISTS `marks` (
   `mark_id` int(11) NOT NULL AUTO_INCREMENT,
   `score` int(11) NOT NULL,
+  `score_1` varchar(11) NOT NULL,
+  `score_2` varchar(11) NOT NULL,
   `sub` varchar(255) NOT NULL,
-  `testnum` int(11) NOT NULL,
   `term` varchar(11) NOT NULL,
   `pupil_id` varchar(20) NOT NULL,
   `Teacher_id` varchar(20) NOT NULL,
   PRIMARY KEY (`mark_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `marks`
 --
 
-INSERT INTO `marks` (`mark_id`, `score`, `sub`, `testnum`, `term`, `pupil_id`, `Teacher_id`) VALUES
-(1, 55, 'CIVICS', 1, '2', '1', 'LPR2468'),
-(2, 60, 'CIVICS', 2, '2', '1', 'LPR2468');
+INSERT INTO `marks` (`mark_id`, `score`, `score_1`, `score_2`, `sub`, `term`, `pupil_id`, `Teacher_id`) VALUES
+(1, 60, '70', '60', 'CIVICS', '1', '5', 'LPR24683'),
+(6, 30, '40', '50', 'CIVICS', '1', '2', 'LPR24683'),
+(5, 50, '70', '20', 'CIVICS', '2', '1', 'LPR24683'),
+(4, 60, '80', '45', 'CIVICS', '1', '1', 'LPR24683'),
+(7, 30, '60', '80', 'CIVICS', '2', '2', 'LPR24683'),
+(8, 90, '100', '40', 'CIVICS', '3', '2', 'LPR24683'),
+(9, 50, '60', '80', 'SCIENCE', '1', '2', 'LPR24683'),
+(10, 50, '60', '30', 'SCIENCE', '1', '1', 'LPR24683'),
+(11, 70, '80', '60', 'SCIENCE', '1', '2', 'LPR24683'),
+(12, 40, '90', '70', 'SCIENCE', '1', '1', 'LPR24683'),
+(13, 20, '40', '50', 'SCIENCE', '1', '8', 'LPR24683'),
+(14, 50, '70', '20', 'CIVICS', '1', '1', 'LPR24683'),
+(15, 50, '70', '20', 'CIVICS', '1', '1', 'LPR24683');
 
 -- --------------------------------------------------------
 
@@ -220,7 +284,7 @@ CREATE TABLE IF NOT EXISTS `pupils` (
   `pupil_name` varchar(255) NOT NULL,
   `class` varchar(10) NOT NULL,
   PRIMARY KEY (`pupil_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `pupils`
@@ -230,7 +294,7 @@ INSERT INTO `pupils` (`pupil_id`, `pupil_name`, `class`) VALUES
 (1, 'Evans Bwalya', '12N'),
 (2, 'Malama Francis', '12N'),
 (3, 'Foster Kangwa', '7b'),
-(4, 'Zulu Booma', '7b'),
+(8, 'Zulu Boma', '7b'),
 (5, 'Kelvin Sampa', '7b'),
 (7, 'Mercy Nambeya', '7b');
 
@@ -286,7 +350,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `user_type` varchar(255) NOT NULL,
   `status` varchar(20) NOT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
@@ -294,9 +358,10 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`user_id`, `user_log_id`, `fullnames`, `phone`, `password`, `user_type`, `status`) VALUES
 (1, 'LPR2468', 'Mary Mulenga', '0966367116', '123', 'admin', 'active'),
-(4, 'LPR24683', 'Chisanga Innocent', '0966367116', '123', 'Teacher', 'offline'),
-(5, 'LPR1234', 'Mulange Malama', '0908989785', '123', 'Teacher', 'offline'),
-(6, 'LPR102030', 'Foster Bwalya', '097801928948', '123', 'Teacher', 'offline');
+(4, 'LPR24683', 'Mulange Kangwa', '0966235202', '123', 'Teacher', 'active'),
+(5, 'LPR1234', 'Mulange Malama', '0908989785', '123', 'Teacher', 'active'),
+(6, 'LPR102030', 'Foster Bwalya', '097801928948', '123', 'Teacher', 'active'),
+(7, 'LPR347755', 'Chikonde Mbalazi', '097801928948', '1234', 'admin', 'offline');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
